@@ -1,25 +1,24 @@
 import {createBrowserRouter} from "react-router-dom";
-import * as authPages from "./Auth";
-import * as dashPages from "./Dash";
+import { auth, dash } from "./pages";
 
 export const routing = createBrowserRouter([
     {
         path: '/',
-        Component: authPages.Layout,
+        Component: auth.Layout,
         children: [
             {
                 path: '',
-                Component: authPages.Welcome
+                Component: auth.Welcome
             }
         ]
     },
     {
         path: '/dash',
-        Component: dashPages.Layout,
+        Component: dash.Layout,
         children: [
             {
                 path: '',
-                Component: dashPages.Dash
+                Component: dash.Dash
             }
         ]
     }
