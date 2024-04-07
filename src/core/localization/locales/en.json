@@ -1,5 +1,23 @@
 {
-  "app": {
-    "greeting": "App Layout"
+  "languages": {
+    "title": "languages",
+    "ru": "Russian",
+    "en": "English"
+  },
+  "slides": {
+    "slide1": {
+      "heading": "WELCOME! Maecenas tempus",
+      "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n commodo ligula eget dolor. Aenean massa."
+    },
+    "slide2": {
+      "heading": "WELCOME! Maecenas tempus 2",
+      "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n commodo ligula eget dolor. Aenean massa."
+    },
+    "slide3": {
+      "heading": "WELCOME! Maecenas tempus 3",
+      "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n commodo ligula eget dolor. Aenean massa."
+    },
+    "next": "Next",
+    "first": "First"
   }
 }

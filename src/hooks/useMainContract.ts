@@ -1,4 +1,3 @@
-import {useState} from "react";
 import {MainContract} from "../contracts/tact_MainContract";
 import {useTonClient} from "./useTonClient";
 import {useAsyncInitialize} from "./useAsyncInitialize";
@@ -9,7 +8,7 @@ import {CHAIN} from "@tonconnect/protocol";
 
 export function useMainContract() {
     const {client} = useTonClient();
-    const {sender, network} = useTonConnect();
+    const {network} = useTonConnect();
 
     const contract = useAsyncInitialize(async () => {
         if (!client) return;

@@ -1,6 +1,4 @@
 import {TonConnectButton} from "@tonconnect/ui-react";
-import {useMainContract} from "../hooks/useMainContract";
-import {useTonConnect} from "../hooks/useTonConnect";
 
 import {
     Card,
@@ -9,6 +7,8 @@ import {
     Ellipsis,
     Button,
 } from "./styled";
+import {useTonConnect} from "@hooks/useTonConnect";
+import {useMainContract} from "@hooks/useMainContract";
 
 export function SmartContract() {
     const {connected} = useTonConnect();

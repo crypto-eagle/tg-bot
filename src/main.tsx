@@ -9,6 +9,8 @@ import {ColorModeScript} from "@chakra-ui/react";
 import {chakraCustomTheme as theme} from "./core/providers/chakra-ui/chakra.custom-theme";
 import {App} from "./pages/App";
 import {ChakraUIProvider} from "./core/providers/chakra-ui/chakra.provider";
+import {DevSupport} from "@react-buddy/ide-toolbox";
+import {ComponentPreviews, useInitial} from "./dev";
 
 const manifestUrl = 'tonconnect-manifest.json';
 const queryClient = new QueryClient({
@@ -21,11 +23,14 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <ColorModeScript initialColorMode={theme.config.initialColorMode}/>
 
         <ChakraUIProvider>
-            <TonConnectUIProvider manifestUrl={manifestUrl}>
-                <QueryClientProvider client={queryClient}>
-                    <App/>
-                </QueryClientProvider>
-            </TonConnectUIProvider>
+            <DevSupport ComponentPreviews={ComponentPreviews}
+                        useInitialHook={useInitial}>
+                <TonConnectUIProvider manifestUrl={manifestUrl}>
+                    <QueryClientProvider client={queryClient}>
+                        <App/>
+                    </QueryClientProvider>
+                </TonConnectUIProvider>
+            </DevSupport>
         </ChakraUIProvider>
     </React.StrictMode>,
 )
