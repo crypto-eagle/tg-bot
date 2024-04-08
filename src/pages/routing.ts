@@ -3,7 +3,7 @@ import { auth, dash } from "./pages";
 
 export const routing = createBrowserRouter([
     {
-        path: '/',
+        path: '/auth',
         Component: auth.Layout,
         children: [
             {
@@ -13,7 +13,7 @@ export const routing = createBrowserRouter([
         ]
     },
     {
-        path: '/dash',
+        path: '/',
         Component: dash.Layout,
         children: [
             {

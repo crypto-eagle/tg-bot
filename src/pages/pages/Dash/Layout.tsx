@@ -1,13 +1,19 @@
 import './Layout.scss';
-import {Outlet} from "react-router-dom";
+import {Outlet, useNavigate, } from "react-router-dom";
+import {useTonConnect} from "@hooks/useTonConnect";
+import {useEffect} from "react";
 
 export const Layout = () => {
+    const {connected} = useTonConnect();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!connected) {
+            navigate("/auth");
+        }
+    }, [navigate, connected]);
+
     return (
-        <div className="sss">
-            <div className="sss__ss">
-                Dash Layout
-            </div>
-            <Outlet/>
-        </div>
+        <Outlet/>
     );
 };

@@ -14,7 +14,7 @@ export function useTonConnect(): {
   return {
     sender: {
       send: async (args: SenderArguments) => {
-        tonConnectUI.sendTransaction({
+        await tonConnectUI.sendTransaction({
           messages: [
             {
               address: args.to.toString(),
@@ -24,7 +24,7 @@ export function useTonConnect(): {
           ],
           validUntil: Date.now() + 5 * 60 * 1000, // 5 minutes for user to approve
         });
-      },
+      }
     },
     connected: !!wallet?.account.address,
     wallet: wallet?.account.address ?? null,

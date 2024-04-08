@@ -8,16 +8,17 @@ export const chakraCustomTheme = extendTheme({
     config
 });
 
+const chakraColorModeStoreKey = 'chakra-ui-color-mode';
+const customColorModeStoreKey = 'custom-color-mode-store';
+
 export function deleteColorModeInLocalStorage() {
-    window.localStorage.removeItem("chakra-ui-color-mode");
+    window.localStorage.removeItem(chakraColorModeStoreKey);
     console.log('deleted "chakra-ui-color-mode" from local storage');
     console.log("You can now refresh to see how a first visit looks like.");
 }
 
-const customColorModeStoreKey = 'custom-color-mode-store';
-
 export function fixColorModeInLocalStorage(colorMode: ColorModeContextType) {
-    const storedMode = localStorage.getItem('chakra-ui-color-mode');
+    const storedMode = localStorage.getItem(chakraColorModeStoreKey);
 
     if (colorMode.colorMode === storedMode) {
         return;

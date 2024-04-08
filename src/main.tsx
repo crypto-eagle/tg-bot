@@ -12,11 +12,14 @@ import {ChakraUIProvider} from "./core/providers/chakra-ui/chakra.provider";
 import {DevSupport} from "@react-buddy/ide-toolbox";
 import {ComponentPreviews, useInitial} from "./dev";
 
-const manifestUrl = 'tonconnect-manifest.json';
+const manifestUrl = window.location.origin + '/tonconnect-manifest.json';
+// const manifestUrl =
+//     "https://alefmanvladimir.github.io/my-twa/tonconnect-manifest.json";
 const queryClient = new QueryClient({
     defaultOptions: {queries: {refetchOnWindowFocus: false}},
 });
 
+console.debug('import.meta.env.SMART_CONTRACT', import.meta.env);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>

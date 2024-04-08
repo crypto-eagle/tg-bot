@@ -1,4 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-unused-vars */
+// noinspection ES6UnusedImports
+
 import {
     Cell,
     Slice,
@@ -500,52 +502,257 @@ function dictValueParserDeposit(): DictionaryValue<Deposit> {
     }
 }
 
-export type Transfer = {
-    $$type: 'Transfer';
-    date: bigint;
-    amount: bigint;
-    isDeposit: boolean;
+export type ClaimInvestorRewards = {
+    $$type: 'ClaimInvestorRewards';
 }
 
-export function storeTransfer(src: Transfer) {
+export function storeClaimInvestorRewards(src: ClaimInvestorRewards) {
     return (builder: Builder) => {
         let b_0 = builder;
-        b_0.storeUint(src.date, 32);
-        b_0.storeCoins(src.amount);
-        b_0.storeBit(src.isDeposit);
+        b_0.storeUint(2782732493, 32);
     };
 }
 
-export function loadTransfer(slice: Slice) {
+export function loadClaimInvestorRewards(slice: Slice) {
     let sc_0 = slice;
-    let _date = sc_0.loadUintBig(32);
-    let _amount = sc_0.loadCoins();
-    let _isDeposit = sc_0.loadBit();
-    return {$$type: 'Transfer' as const, date: _date, amount: _amount, isDeposit: _isDeposit};
+    if (sc_0.loadUint(32) !== 2782732493) {
+        throw Error('Invalid prefix');
+    }
+    return {$$type: 'ClaimInvestorRewards' as const};
 }
 
-function loadTupleTransfer(source: TupleReader) {
-    let _date = source.readBigNumber();
-    let _amount = source.readBigNumber();
-    let _isDeposit = source.readBoolean();
-    return {$$type: 'Transfer' as const, date: _date, amount: _amount, isDeposit: _isDeposit};
+function loadTupleClaimInvestorRewards(source: TupleReader) {
+    return {$$type: 'ClaimInvestorRewards' as const};
 }
 
-function storeTupleTransfer(source: Transfer) {
+function storeTupleClaimInvestorRewards(source: ClaimInvestorRewards) {
     let builder = new TupleBuilder();
-    builder.writeNumber(source.date);
-    builder.writeNumber(source.amount);
-    builder.writeBoolean(source.isDeposit);
     return builder.build();
 }
 
-function dictValueParserTransfer(): DictionaryValue<Transfer> {
+function dictValueParserClaimInvestorRewards(): DictionaryValue<ClaimInvestorRewards> {
     return {
         serialize: (src, buidler) => {
-            buidler.storeRef(beginCell().store(storeTransfer(src)).endCell());
+            buidler.storeRef(beginCell().store(storeClaimInvestorRewards(src)).endCell());
         },
         parse: (src) => {
-            return loadTransfer(src.loadRef().beginParse());
+            return loadClaimInvestorRewards(src.loadRef().beginParse());
+        }
+    }
+}
+
+export type TopUpWithFounderFee = {
+    $$type: 'TopUpWithFounderFee';
+    amount: bigint;
+}
+
+export function storeTopUpWithFounderFee(src: TopUpWithFounderFee) {
+    return (builder: Builder) => {
+        let b_0 = builder;
+        b_0.storeUint(183258831, 32);
+        b_0.storeInt(src.amount, 257);
+    };
+}
+
+export function loadTopUpWithFounderFee(slice: Slice) {
+    let sc_0 = slice;
+    if (sc_0.loadUint(32) !== 183258831) {
+        throw Error('Invalid prefix');
+    }
+    let _amount = sc_0.loadIntBig(257);
+    return {$$type: 'TopUpWithFounderFee' as const, amount: _amount};
+}
+
+function loadTupleTopUpWithFounderFee(source: TupleReader) {
+    let _amount = source.readBigNumber();
+    return {$$type: 'TopUpWithFounderFee' as const, amount: _amount};
+}
+
+function storeTupleTopUpWithFounderFee(source: TopUpWithFounderFee) {
+    let builder = new TupleBuilder();
+    builder.writeNumber(source.amount);
+    return builder.build();
+}
+
+function dictValueParserTopUpWithFounderFee(): DictionaryValue<TopUpWithFounderFee> {
+    return {
+        serialize: (src, buidler) => {
+            buidler.storeRef(beginCell().store(storeTopUpWithFounderFee(src)).endCell());
+        },
+        parse: (src) => {
+            return loadTopUpWithFounderFee(src.loadRef().beginParse());
+        }
+    }
+}
+
+export type ClaimStakeHoldersRewards = {
+    $$type: 'ClaimStakeHoldersRewards';
+}
+
+export function storeClaimStakeHoldersRewards(src: ClaimStakeHoldersRewards) {
+    return (builder: Builder) => {
+        let b_0 = builder;
+        b_0.storeUint(2174291428, 32);
+    };
+}
+
+export function loadClaimStakeHoldersRewards(slice: Slice) {
+    let sc_0 = slice;
+    if (sc_0.loadUint(32) !== 2174291428) {
+        throw Error('Invalid prefix');
+    }
+    return {$$type: 'ClaimStakeHoldersRewards' as const};
+}
+
+function loadTupleClaimStakeHoldersRewards(source: TupleReader) {
+    return {$$type: 'ClaimStakeHoldersRewards' as const};
+}
+
+function storeTupleClaimStakeHoldersRewards(source: ClaimStakeHoldersRewards) {
+    let builder = new TupleBuilder();
+    return builder.build();
+}
+
+function dictValueParserClaimStakeHoldersRewards(): DictionaryValue<ClaimStakeHoldersRewards> {
+    return {
+        serialize: (src, buidler) => {
+            buidler.storeRef(beginCell().store(storeClaimStakeHoldersRewards(src)).endCell());
+        },
+        parse: (src) => {
+            return loadClaimStakeHoldersRewards(src.loadRef().beginParse());
+        }
+    }
+}
+
+export type Round = {
+    $$type: 'Round';
+    openDate: bigint;
+    deposit: bigint;
+}
+
+export function storeRound(src: Round) {
+    return (builder: Builder) => {
+        let b_0 = builder;
+        b_0.storeUint(src.openDate, 32);
+        b_0.storeCoins(src.deposit);
+    };
+}
+
+export function loadRound(slice: Slice) {
+    let sc_0 = slice;
+    let _openDate = sc_0.loadUintBig(32);
+    let _deposit = sc_0.loadCoins();
+    return {$$type: 'Round' as const, openDate: _openDate, deposit: _deposit};
+}
+
+function loadTupleRound(source: TupleReader) {
+    let _openDate = source.readBigNumber();
+    let _deposit = source.readBigNumber();
+    return {$$type: 'Round' as const, openDate: _openDate, deposit: _deposit};
+}
+
+function storeTupleRound(source: Round) {
+    let builder = new TupleBuilder();
+    builder.writeNumber(source.openDate);
+    builder.writeNumber(source.deposit);
+    return builder.build();
+}
+
+function dictValueParserRound(): DictionaryValue<Round> {
+    return {
+        serialize: (src, buidler) => {
+            buidler.storeRef(beginCell().store(storeRound(src)).endCell());
+        },
+        parse: (src) => {
+            return loadRound(src.loadRef().beginParse());
+        }
+    }
+}
+
+export type ContractMeta = {
+    $$type: 'ContractMeta';
+    id: bigint;
+    founder: Address;
+    minDeposit: bigint;
+    roundMultiplier: bigint;
+    maxDepositMultiplier: bigint;
+    investors: Dictionary<Address, Investor>;
+    bonusSystem: Dictionary<bigint, bigint>;
+}
+
+export function storeContractMeta(src: ContractMeta) {
+    return (builder: Builder) => {
+        let b_0 = builder;
+        b_0.storeUint(src.id, 32);
+        b_0.storeAddress(src.founder);
+        b_0.storeCoins(src.minDeposit);
+        b_0.storeUint(src.roundMultiplier, 8);
+        b_0.storeUint(src.maxDepositMultiplier, 8);
+        b_0.storeDict(src.investors, Dictionary.Keys.Address(), dictValueParserInvestor());
+        b_0.storeDict(src.bonusSystem, Dictionary.Keys.BigInt(257), Dictionary.Values.BigInt(257));
+    };
+}
+
+export function loadContractMeta(slice: Slice) {
+    let sc_0 = slice;
+    let _id = sc_0.loadUintBig(32);
+    let _founder = sc_0.loadAddress();
+    let _minDeposit = sc_0.loadCoins();
+    let _roundMultiplier = sc_0.loadUintBig(8);
+    let _maxDepositMultiplier = sc_0.loadUintBig(8);
+    let _investors = Dictionary.load(Dictionary.Keys.Address(), dictValueParserInvestor(), sc_0);
+    let _bonusSystem = Dictionary.load(Dictionary.Keys.BigInt(257), Dictionary.Values.BigInt(257), sc_0);
+    return {
+        $$type: 'ContractMeta' as const,
+        id: _id,
+        founder: _founder,
+        minDeposit: _minDeposit,
+        roundMultiplier: _roundMultiplier,
+        maxDepositMultiplier: _maxDepositMultiplier,
+        investors: _investors,
+        bonusSystem: _bonusSystem
+    };
+}
+
+function loadTupleContractMeta(source: TupleReader) {
+    let _id = source.readBigNumber();
+    let _founder = source.readAddress();
+    let _minDeposit = source.readBigNumber();
+    let _roundMultiplier = source.readBigNumber();
+    let _maxDepositMultiplier = source.readBigNumber();
+    let _investors = Dictionary.loadDirect(Dictionary.Keys.Address(), dictValueParserInvestor(), source.readCellOpt());
+    let _bonusSystem = Dictionary.loadDirect(Dictionary.Keys.BigInt(257), Dictionary.Values.BigInt(257), source.readCellOpt());
+    return {
+        $$type: 'ContractMeta' as const,
+        id: _id,
+        founder: _founder,
+        minDeposit: _minDeposit,
+        roundMultiplier: _roundMultiplier,
+        maxDepositMultiplier: _maxDepositMultiplier,
+        investors: _investors,
+        bonusSystem: _bonusSystem
+    };
+}
+
+function storeTupleContractMeta(source: ContractMeta) {
+    let builder = new TupleBuilder();
+    builder.writeNumber(source.id);
+    builder.writeAddress(source.founder);
+    builder.writeNumber(source.minDeposit);
+    builder.writeNumber(source.roundMultiplier);
+    builder.writeNumber(source.maxDepositMultiplier);
+    builder.writeCell(source.investors.size > 0 ? beginCell().storeDictDirect(source.investors, Dictionary.Keys.Address(), dictValueParserInvestor()).endCell() : null);
+    builder.writeCell(source.bonusSystem.size > 0 ? beginCell().storeDictDirect(source.bonusSystem, Dictionary.Keys.BigInt(257), Dictionary.Values.BigInt(257)).endCell() : null);
+    return builder.build();
+}
+
+function dictValueParserContractMeta(): DictionaryValue<ContractMeta> {
+    return {
+        serialize: (src, buidler) => {
+            buidler.storeRef(beginCell().store(storeContractMeta(src)).endCell());
+        },
+        parse: (src) => {
+            return loadContractMeta(src.loadRef().beginParse());
         }
     }
 }
@@ -553,56 +760,104 @@ function dictValueParserTransfer(): DictionaryValue<Transfer> {
 export type Investor = {
     $$type: 'Investor';
     upLine: Address;
+    address: Address;
+    totalDeposits: bigint;
+    dailyIncome: bigint;
+    dailyIncomeHistorical: bigint;
     bonus: bigint;
-    transfers: Dictionary<number, Transfer>;
-    transfersCount: bigint;
+    bonusHistorical: bigint;
+    round: bigint;
+    currentRound: Round | null;
 }
 
 export function storeInvestor(src: Investor) {
     return (builder: Builder) => {
         let b_0 = builder;
         b_0.storeAddress(src.upLine);
-        b_0.storeCoins(src.bonus);
-        b_0.storeDict(src.transfers, Dictionary.Keys.Uint(32), dictValueParserTransfer());
-        b_0.storeUint(src.transfersCount, 32);
+        b_0.storeAddress(src.address);
+        b_0.storeCoins(src.totalDeposits);
+        b_0.storeCoins(src.dailyIncome);
+        b_0.storeCoins(src.dailyIncomeHistorical);
+        let b_1 = new Builder();
+        b_1.storeCoins(src.bonus);
+        b_1.storeCoins(src.bonusHistorical);
+        b_1.storeUint(src.round, 8);
+        if (src.currentRound !== null && src.currentRound !== undefined) {
+            b_1.storeBit(true);
+            b_1.store(storeRound(src.currentRound));
+        } else {
+            b_1.storeBit(false);
+        }
+        b_0.storeRef(b_1.endCell());
     };
 }
 
 export function loadInvestor(slice: Slice) {
     let sc_0 = slice;
     let _upLine = sc_0.loadAddress();
-    let _bonus = sc_0.loadCoins();
-    let _transfers = Dictionary.load(Dictionary.Keys.Uint(32), dictValueParserTransfer(), sc_0);
-    let _transfersCount = sc_0.loadUintBig(32);
+    let _address = sc_0.loadAddress();
+    let _totalDeposits = sc_0.loadCoins();
+    let _dailyIncome = sc_0.loadCoins();
+    let _dailyIncomeHistorical = sc_0.loadCoins();
+    let sc_1 = sc_0.loadRef().beginParse();
+    let _bonus = sc_1.loadCoins();
+    let _bonusHistorical = sc_1.loadCoins();
+    let _round = sc_1.loadUintBig(8);
+    let _currentRound = sc_1.loadBit() ? loadRound(sc_1) : null;
     return {
         $$type: 'Investor' as const,
         upLine: _upLine,
+        address: _address,
+        totalDeposits: _totalDeposits,
+        dailyIncome: _dailyIncome,
+        dailyIncomeHistorical: _dailyIncomeHistorical,
         bonus: _bonus,
-        transfers: _transfers,
-        transfersCount: _transfersCount
+        bonusHistorical: _bonusHistorical,
+        round: _round,
+        currentRound: _currentRound
     };
 }
 
 function loadTupleInvestor(source: TupleReader) {
     let _upLine = source.readAddress();
+    let _address = source.readAddress();
+    let _totalDeposits = source.readBigNumber();
+    let _dailyIncome = source.readBigNumber();
+    let _dailyIncomeHistorical = source.readBigNumber();
     let _bonus = source.readBigNumber();
-    let _transfers = Dictionary.loadDirect(Dictionary.Keys.Uint(32), dictValueParserTransfer(), source.readCellOpt());
-    let _transfersCount = source.readBigNumber();
+    let _bonusHistorical = source.readBigNumber();
+    let _round = source.readBigNumber();
+    const _currentRound_p = source.readTupleOpt();
+    const _currentRound = _currentRound_p ? loadTupleRound(_currentRound_p) : null;
     return {
         $$type: 'Investor' as const,
         upLine: _upLine,
+        address: _address,
+        totalDeposits: _totalDeposits,
+        dailyIncome: _dailyIncome,
+        dailyIncomeHistorical: _dailyIncomeHistorical,
         bonus: _bonus,
-        transfers: _transfers,
-        transfersCount: _transfersCount
+        bonusHistorical: _bonusHistorical,
+        round: _round,
+        currentRound: _currentRound
     };
 }
 
 function storeTupleInvestor(source: Investor) {
     let builder = new TupleBuilder();
     builder.writeAddress(source.upLine);
+    builder.writeAddress(source.address);
+    builder.writeNumber(source.totalDeposits);
+    builder.writeNumber(source.dailyIncome);
+    builder.writeNumber(source.dailyIncomeHistorical);
     builder.writeNumber(source.bonus);
-    builder.writeCell(source.transfers.size > 0 ? beginCell().storeDictDirect(source.transfers, Dictionary.Keys.Uint(32), dictValueParserTransfer()).endCell() : null);
-    builder.writeNumber(source.transfersCount);
+    builder.writeNumber(source.bonusHistorical);
+    builder.writeNumber(source.round);
+    if (source.currentRound !== null && source.currentRound !== undefined) {
+        builder.writeTuple(storeTupleRound(source.currentRound));
+    } else {
+        builder.writeTuple(null);
+    }
     return builder.build();
 }
 
@@ -617,106 +872,34 @@ function dictValueParserInvestor(): DictionaryValue<Investor> {
     }
 }
 
-export type BalanceInfo = {
-    $$type: 'BalanceInfo';
-    totalDeposits: bigint;
-    totalWithdrawals: bigint;
-    totalEarns: bigint;
-    referralBonus: bigint;
-    dailyIncome: bigint;
-}
-
-export function storeBalanceInfo(src: BalanceInfo) {
-    return (builder: Builder) => {
-        let b_0 = builder;
-        b_0.storeCoins(src.totalDeposits);
-        b_0.storeCoins(src.totalWithdrawals);
-        b_0.storeCoins(src.totalEarns);
-        b_0.storeCoins(src.referralBonus);
-        b_0.storeCoins(src.dailyIncome);
-    };
-}
-
-export function loadBalanceInfo(slice: Slice) {
-    let sc_0 = slice;
-    let _totalDeposits = sc_0.loadCoins();
-    let _totalWithdrawals = sc_0.loadCoins();
-    let _totalEarns = sc_0.loadCoins();
-    let _referralBonus = sc_0.loadCoins();
-    let _dailyIncome = sc_0.loadCoins();
-    return {
-        $$type: 'BalanceInfo' as const,
-        totalDeposits: _totalDeposits,
-        totalWithdrawals: _totalWithdrawals,
-        totalEarns: _totalEarns,
-        referralBonus: _referralBonus,
-        dailyIncome: _dailyIncome
-    };
-}
-
-function loadTupleBalanceInfo(source: TupleReader) {
-    let _totalDeposits = source.readBigNumber();
-    let _totalWithdrawals = source.readBigNumber();
-    let _totalEarns = source.readBigNumber();
-    let _referralBonus = source.readBigNumber();
-    let _dailyIncome = source.readBigNumber();
-    return {
-        $$type: 'BalanceInfo' as const,
-        totalDeposits: _totalDeposits,
-        totalWithdrawals: _totalWithdrawals,
-        totalEarns: _totalEarns,
-        referralBonus: _referralBonus,
-        dailyIncome: _dailyIncome
-    };
-}
-
-function storeTupleBalanceInfo(source: BalanceInfo) {
-    let builder = new TupleBuilder();
-    builder.writeNumber(source.totalDeposits);
-    builder.writeNumber(source.totalWithdrawals);
-    builder.writeNumber(source.totalEarns);
-    builder.writeNumber(source.referralBonus);
-    builder.writeNumber(source.dailyIncome);
-    return builder.build();
-}
-
-function dictValueParserBalanceInfo(): DictionaryValue<BalanceInfo> {
-    return {
-        serialize: (src, buidler) => {
-            buidler.storeRef(beginCell().store(storeBalanceInfo(src)).endCell());
-        },
-        parse: (src) => {
-            return loadBalanceInfo(src.loadRef().beginParse());
-        }
-    }
-}
-
-type MainContract_init_args = {
-    $$type: 'MainContract_init_args';
+type EarnContract_init_args = {
+    $$type: 'EarnContract_init_args';
     id: bigint;
     minDeposit: bigint;
+    founder: Address;
 }
 
-function initMainContract_init_args(src: MainContract_init_args) {
+function initEarnContract_init_args(src: EarnContract_init_args) {
     return (builder: Builder) => {
         let b_0 = builder;
         b_0.storeInt(src.id, 257);
         b_0.storeInt(src.minDeposit, 257);
+        b_0.storeAddress(src.founder);
     };
 }
 
-async function MainContract_init(id: bigint, minDeposit: bigint) {
-    const __code = Cell.fromBase64('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');
-    const __system = Cell.fromBase64('te6cckECMwEACmUAAQHAAQEFoGlLAgEU/wD0pBP0vPLICwMCAWIbBAIBIBYFAgEgFQYCASASBwIBSAwIAgFICgkCd6V2Qa6TAgIXdeXBEEGuFhRBAgn/deWhEwYTdeXBEbZ4qgm2eNiiQN0kYNsyQN3loQDeSN4JxEDdJGDbvSsRAg+m57Z5tnjYoysLAAj4J28QAnmvWpBrpMCAhd15cEQQa4WFEECCf915aETBhN15cERtniqCbZ42KJA3SRg2zJA3eWhAN5K3gvEQN0kYNu9AKw0CUts8IG6SMG3gVHVDU1QFIG7y0IBvJBCNEHwQaxBaEEnbPGxREEUQNEEwEQ4BxnBUcAGONCSAICJZ9A9voZIwbd8gbpIwbZ3Q0x/6ANIAVSBsE28D4iBu8tCAbyNsEpIToJMSoFjiAqTkMFR6mFOpGnBUSqkIEREIBxEQBxBvEF4QTds8bFEQSRgTbwUQNUQwEg8B8mwicG1TEQSOYSSAICVZ9A9voZIwbd8gbpIwbZ3Q0x/6ANIAVSBsE28D4iBu8tCAbyNTOr6TJG6zkXDijhkkIG7y0IBSMKGBDhCgggFRgKkEUkCoFqAF3pISoJISoeJTCL6SbBKRMeIDpAPkMzNTFb6SbCHjDYBkqQQQACz4IwMgbvLQgBOhgQ4QoIIBUYCpBKigAIaBAQsjAln0C2+hkjBt3yBukjBtji3Q+kABINdJgQELuvLgiCDXCwoggQT/uvLQiYMJuvLgiAH6APQE0x9VMGwUbwTiAgEgFBMAdbJu40NWlwZnM6Ly9RbVhxZFl3andMZm9DSHlGeUVVdkFUVkpOeTRBcnpyWEh0Q0Z6ZFZyRVpWTVdwggABGwr7tRNDSAAGAA3bu9GCcFzsPV0srnsehOw51kqFG2aCcJ3WNS0rZHyzItOvLf3xYjmCcCBVwBuAZ2OUzlg6rkclssOCcBvUne+VRZbxx1PT3gVZwyaCcJ2XTlqzTstzOg6WbZRm6KSCcEDOdWnnFfnSULAdYW4mR7KAIBIBkXAhG4Ud2zzbPGxRgrGAACIwIRuJxts82zxsUYKxoAAiICAsodHAEDr2AmAunUB0NMDAXGwowH6QAEg10mBAQu68uCIINcLCiCBBP+68tCJgwm68uCIVFBTA28E+GEC+GLbPFUU2zzy4ILI+EMBzH8BygBVQFBFyx9YINdJgQELuvLgiCDXCwoggQT/uvLQiYMJuvLgiM8WAfoC9AD0AMntVIrHgP2AZIwf+BwIddJwh+VMCDXCx/eIIIQH7dvE7qPXzDTHwGCEB+3bxO68uCB+kAh1wsBwwCOHQEg10mBAQu68uCIINcLCiCBBP+68tCJgwm68uCIkjFt4jH4QW8kE18DggCmhlMVvvL0+EIQV14zRnDbPF8E+EIQV1UU2zx/MCMfAWjgghCUapi2uo6n0x8BghCUapi2uvLggdM/ATHIAYIQr/kPV1jLH8s/yfhCAXBt2zx/4DBwIAE6bW0ibrOZWyBu8tCAbyIBkTLiECRwAwSAQlAj2zwhAcrIcQHKAVAHAcoAcAHKAlAFINdJgQELuvLgiCDXCwoggQT/uvLQiYMJuvLgiM8WUAP6AnABymgjbrORf5MkbrPilzMzAXABygDjDSFus5x/AcoAASBu8tCAAcyVMXABygDiyQH7ACIAmH8BygDIcAHKAHABygAkbrOdfwHKAAQgbvLQgFAEzJY0A3ABygDiJG6znX8BygAEIG7y0IBQBMyWNANwAcoA4nABygACfwHKAALJWMwD7iSBAQskWfQLb6GSMG3fIG6SMG2OLdD6QAEg10mBAQu68uCIINcLCiCBBP+68tCJgwm68uCIAfoA9ATTH1UwbBRvBOIgbvLQgG8kJW6zkyDAAJFw4pE14w0QShA5SHYpf9s8WYAgA8hVIFAjyx8B+gLKAMksEDkBKikkAuwgbpUwWfRbMJRBM/QX4gqkgQELVHmLJMhVMFBDINdJgQELuvLgiCDXCwoggQT/uvLQiYMJuvLgiM8WAfoCEvQAyx/JQXAgbpUwWfRZMJRBM/QT4hA5SBZDcxRx2zyIyIJYwAAAAAAAAAAAAAAAAQHLZ8zJcPsAJiUAGgAAAABEZXBvc2l0ZWQBsmwiMiSBAQskWfQLb6GSMG3fIG6SMG2OLdD6QAEg10mBAQu68uCIINcLCiCBBP+68tCJgwm68uCIAfoA9ATTH1UwbBRvBOJukl8D4CSBAQskWfQLb6GSMG3fJwHcIG6SMG2OLdD6QAEg10mBAQu68uCIINcLCiCBBP+68tCJgwm68uCIAfoA9ATTH1UwbBRvBOIgbvLQgG8kgQEBVFgAUoBBM/QMb6GUAdcAMJJbbeIgbpJfCOAlgGSpBAEgbvLQgKgToIEBC1R0EiYoAKLIVTBQQyDXSYEBC7ry4Igg1wsKIIEE/7ry0ImDCbry4IjPFgH6AhL0AMsfySgQOwEgbpUwWfRZMJRBM/QT4lKnxwWTXwUy4ASkEFdBUBQT8D0ACPgjAgEApDMEIG7y0IAngQELIln0C2+hkjBt3yBukjBtji3Q+kABINdJgQELuvLgiCDXCwoggQT/uvLQiYMJuvLgiAH6APQE0x9VMGwUbwTibpPyw+jeQBQBqO1E0NQB+GPSAAGOLNMf+kABINdJgQELuvLgiCDXCwoggQT/uvLQiYMJuvLgiAH6APQE9ARVQGwV4Pgo1wsKgwm68uCJgQEB1wCBAQHXAFkC0QHbPCwC5m1t+EJSBFUg2zxfBIEBAXGAHiIhbpVbWfRaMJjIAc8AQTP0QuKBAQFyeiIhbpVbWfRaMJjIAc8AQTP0QuKBAQFzeiIhbpVbWfRaMJjIAc8AQTP0QuKBAQF0eiIhbpVbWfRaMJjIAc8AQTP0QuKBAQF1eiIwLQHwIW6VW1n0WjCYyAHPAEEz9ELigQEBdngiIW6VW1n0WjCYyAHPAEEz9ELigQEBd3giIW6VW1n0WjCYyAHPAEEz9ELigQEBeFMBIW6VW1n0WjCYyAHPAEEz9ELigQEBeXgiIW6VW1n0WjCYyAHPAEEz9ELigQEBengiLgH6IW6VW1n0WjCYyAHPAEEz9ELigQEBgAt1IiFulVtZ9FowmMgBzwBBM/RC4oEBAYAMdSIhbpVbWfRaMJjIAc8AQTP0QuKBAQGADXUiIW6VW1n0WjCYyAHPAEEz9ELigQEBgA51IiFulVtZ9FowmMgBzwBBM/RC4oEBAYAPdSIvACQhbpVbWfRaMJjIAc8AQTP0QuICqCKBAQsiWfQLb6GSMG3fIG6SMG2OLdD6QAEg10mBAQu68uCIINcLCiCBBP+68tCJgwm68uCIAfoA9ATTH1UwbBRvBOJu4wCBAQsjAln0C2+hkjBt3zIxAHggbpIwbY4t0PpAASDXSYEBC7ry4Igg1wsKIIEE/7ry0ImDCbry4IgB+gD0BNMfVTBsFG8E4iBu8tCAbyQAlHBtUxZQI4EBC/hCVTHIVTBQQyDXSYEBC7ry4Igg1wsKIIEE/7ry0ImDCbry4IjPFgH6AhL0AMsfyRA1IG6VMFn0WTCUQTP0E+ICURK0AQ==');
+async function EarnContract_init(id: bigint, minDeposit: bigint, founder: Address) {
+    const __code = Cell.fromBase64('te6ccgECMAEACPwAART/APSkE/S88sgLAQIBYgIDA+DQAdDTAwFxsKMB+kABINdJgQELuvLgiCDXCwoggQT/uvLQiYMJuvLgiFRQUwNvBPhhAvhi2zxVF9s88uCCyPhDAcx/AcoAVXBQhyDXSYEBC7ry4Igg1wsKIIEE/7ry0ImDCbry4IjPFgdVBds8ye1UJwkKAgEgBAUCAVgGBwIBIBgZAhG0o7tnm2eNkDAnCAIRtoGbZ5tnjZAwJw0AAicCxAGSMH/gcCHXScIflTAg1wsf3iCCEB+3bxO6jrow0x8BghAft28TuvLggfpAIdcLAcMAjh0BINdJgQELuvLgiCDXCwoggQT/uvLQiYMJuvLgiJIxbeIx4IIQlGqYtrrjAjBwCwwAXlBnyx9QBCDXSYEBC7ry4Igg1wsKIIEE/7ry0ImDCbry4IjPFlj6AssHywf0APQAA5D4QW8kE18DEGkQWBBHEDlIeYIApoYJ2zxSsL4a8vSCANXfCds8UrC7GvL0+EImEItRplGmUaZRplGmUaUKEDlIdhA1QUPbPH8NIw4BTtMfAYIQlGqYtrry4IHTPwExyAGCEK/5D1dYyx/LP8n4QgFwbds8fxUBkFR3ZVR3ZVN2+EIIERAIL1GPUY9Rj1GPUY9RjwgHERYHBhEVBgURFAUEERMEAxESAwIREQIBERABERbbPGyBEGcQVhBFEDRBMCQE5oEBC1RFFFn0C2+hkjBt3yBukjBtjofQ2zxsGW8J4iBus46+MPhCCRERCQgREAgQfxBuEF0QTBA7ECpWEQJWEQJWEQJWEQJWEQJWEQJWEQIREds8XwkQjxCeEI0QnF4oEInjDYEBC/hCKllZ9AtvoZIwbd8tLA8QAuhsEiBu8tCAbylUeHZUeHZUeHYREBEhERAPESAPDhEfDg0RHg0MER0MCxEcCwoRGwoJERoJ2zwHERAHEG8QXhBNEDxLqSdRl1GXUZdRl1GXUZcJEGgHER8HBhEeBgURHQUEERwEAxEbAwIRGgIBERkBERjbPBEvBPwgbpIwbY6H0Ns8bBlvCeIgbvLQgG8pVHh2VHh2VHh2ERARGREQDxEYDw4RFw4NERYNDBEVDAsRFAsKERMKCRESCds8ERgfoAYRFwYFERYFBBEVBAMRFAMCERMCARESAQ4REQ4GERAGEE8QPk3AEDsQahBZEHgQR0YWUFUE2zwtEi8TArQQSBA3ECaCAJRIJlE6ShNUGZk5OxEQERIREF4+DRERDQwREgwLERELChESCgkREQkQaBBXEEYQNUAUERJQA9s8GfL0CCBu8tCAbyIQeRBoEFcQRhA1ECTbPDAlJgAUbHGCAJRIMm7y9AEyiMiCWMAAAAAAAAAAAAAAAAEBy2fMyXD7ABQAGgAAAABEZXBvc2l0ZWQBOm1tIm6zmVsgbvLQgG8iAZEy4hAkcAMEgEJQI9s8FgHKyHEBygFQBwHKAHABygJQBSDXSYEBC7ry4Igg1wsKIIEE/7ry0ImDCbry4IjPFlAD+gJwAcpoI26zkX+TJG6z4pczMwFwAcoA4w0hbrOcfwHKAAEgbvLQgAHMlTFwAcoA4skB+wAXAJh/AcoAyHABygBwAcoAJG6znX8BygAEIG7y0IBQBMyWNANwAcoA4iRus51/AcoABCBu8tCAUATMljQDcAHKAOJwAcoAAn8BygACyVjMAgEgGhsCASAdHgIRtea7Z5tnjZDwJxwAubd6ME4LnYerpZXPY9CdhzrJUKNs0E4TusalpWyPlmRadeW/vixHME4ECrgDcAzscpnLB1XI5LZYcE4TsunLVmnZbmdB0s2yjN0UkE4IGc6tPOK/OkoWA6wtxMj2UAAOVHZUVHZUJgIBIB8gAgFIISIAEbCvu1E0NIAAYAB1sm7jQ1aXBmczovL1FtUTVCTDR0WnRaM3hrYmZ3d0VaMTg1elRLTjh2YTNhRGY4cFdMQUZFZ055VFKCACEaxGbZ5tnjZAwCcjAhGsue2ebZ42QMAnKAGWVHdlVHdlU3b4QggREAgvUY9Rj1GPUY9Rj1GPCAcRFgcGERUGBREUBQQREwQDERIDAhERAgEREAERFts8NFtsQqgQZxBWEEUQNEEwJALoMTI0NBKBAQtQBFn0C2+hkjBt3yBukjBtjofQ2zxsGW8J4iBus47JIG7y0IBvKRBoXjQQN0h4J4IAlEgKERARFBEQDxETDw4REg4NERENDBEUDAsREwsKERIKCRERCds8GvL0UJeoUAmoEEgQN0ZQEpIwMeItJQFsNFs1M1sgbvLQgG8iZhCbXjcQahBbEEoQOxAq2zwaoAiBATaogGSpBFAIvhBoEFcQRhA1RDASJgAm+CNYoYEOEKCCAVGAqQSogGSpBALc7UTQ1AH4Y9IAAY6m+kABINdJgQELuvLgiCDXCwoggQT/uvLQiYMJuvLgiAHbPBB4bBjg+CjXCwqDCbry4ImBAQHXAIEBAdcA+kABINdJgQELuvLgiCDXCwoggQT/uvLQiYMJuvLgiEMwA9FY2zwpKgAI+CdvEABc0x/6QAEg10mBAQu68uCIINcLCiCBBP+68tCJgwm68uCIAfoA0wfTB/QE9ARVYAJG+EJDE3OAZG1tVHZUVHZUJts8bVR4dlR4dlOHEGhVFds8XwkrLAAEXwcD9IFTpSSBAQskWfQLb6GSMG3fIG6SMG2Oh9DbPGwZbwnibvL0IG6SMCbeggCGu4EBCyIgbvLQgCZZWfQLb6GSMG3fIG6SMG2Oh9DbPGwZbwnibrPy9CBu8tCAcFRwACAQVnFtDhEXDg0RFg0MERUMCxEUCwoREwoJERIJLS0uANT6QAEg10mBAQu68uCIINcLCiCBBP+68tCJgwm68uCIAfpAASDXSYEBC7ry4Igg1wsKIIEE/7ry0ImDCbry4IgB+gD6APoA1AHQ+gD6ANMH0gABmdMf+gBZbBJvApIwbeIQSRBIEEcQRhBFAZYIEREIBxEQBxBvBREXBQQRFgQDERUDAhEUAgEREwERElYRVhFWEVYaVhpWGlYaVhpWGts8BxEQBxBvEF4QTRA8SxkHBVCjUAgGRBQvAAZfDzA=');
+    const __system = Cell.fromBase64('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');
     let builder = beginCell();
     builder.storeRef(__system);
     builder.storeUint(0, 1);
-    initMainContract_init_args({$$type: 'MainContract_init_args', id, minDeposit})(builder);
+    initEarnContract_init_args({$$type: 'EarnContract_init_args', id, minDeposit, founder})(builder);
     const __data = builder.endCell();
     return {code: __code, data: __data};
 }
 
-const MainContract_errors: { [key: number]: { message: string } } = {
+const EarnContract_errors: { [key: number]: { message: string } } = {
     2: {message: `Stack undeflow`},
     3: {message: `Stack overflow`},
     4: {message: `Integer overflow`},
@@ -741,10 +924,14 @@ const MainContract_errors: { [key: number]: { message: string } } = {
     135: {message: `Code of a contract was not found`},
     136: {message: `Invalid address`},
     137: {message: `Masterchain support is not enabled for this contract`},
+    21413: {message: `Investor already exists`},
+    34491: {message: `UpLine not exists`},
+    37960: {message: `Current round is not finished`},
     42630: {message: `Minimum deposit is not enough`},
+    54751: {message: `Maximum deposit exceeded`},
 }
 
-const MainContract_types: ABIType[] = [
+const EarnContract_types: ABIType[] = [
     {
         "name": "StateInit",
         "header": null,
@@ -820,16 +1007,40 @@ const MainContract_types: ABIType[] = [
         "header": 532115219,
         "fields": [{"name": "upLine", "type": {"kind": "simple", "type": "address", "optional": true}}]
     },
+    {"name": "ClaimInvestorRewards", "header": 2782732493, "fields": []},
     {
-        "name": "Transfer",
+        "name": "TopUpWithFounderFee",
+        "header": 183258831,
+        "fields": [{"name": "amount", "type": {"kind": "simple", "type": "int", "optional": false, "format": 257}}]
+    },
+    {"name": "ClaimStakeHoldersRewards", "header": 2174291428, "fields": []},
+    {
+        "name": "Round",
         "header": null,
         "fields": [{
-            "name": "date",
+            "name": "openDate",
             "type": {"kind": "simple", "type": "uint", "optional": false, "format": 32}
-        }, {
-            "name": "amount",
+        }, {"name": "deposit", "type": {"kind": "simple", "type": "uint", "optional": false, "format": "coins"}}]
+    },
+    {
+        "name": "ContractMeta",
+        "header": null,
+        "fields": [{
+            "name": "id",
+            "type": {"kind": "simple", "type": "uint", "optional": false, "format": 32}
+        }, {"name": "founder", "type": {"kind": "simple", "type": "address", "optional": false}}, {
+            "name": "minDeposit",
             "type": {"kind": "simple", "type": "uint", "optional": false, "format": "coins"}
-        }, {"name": "isDeposit", "type": {"kind": "simple", "type": "bool", "optional": false}}]
+        }, {
+            "name": "roundMultiplier",
+            "type": {"kind": "simple", "type": "uint", "optional": false, "format": 8}
+        }, {
+            "name": "maxDepositMultiplier",
+            "type": {"kind": "simple", "type": "uint", "optional": false, "format": 8}
+        }, {
+            "name": "investors",
+            "type": {"kind": "dict", "key": "address", "value": "Investor", "valueFormat": "ref"}
+        }, {"name": "bonusSystem", "type": {"kind": "dict", "key": "int", "value": "int"}}]
     },
     {
         "name": "Investor",
@@ -838,45 +1049,43 @@ const MainContract_types: ABIType[] = [
             "name": "upLine",
             "type": {"kind": "simple", "type": "address", "optional": false}
         }, {
-            "name": "bonus",
-            "type": {"kind": "simple", "type": "uint", "optional": false, "format": "coins"}
+            "name": "address",
+            "type": {"kind": "simple", "type": "address", "optional": false}
         }, {
-            "name": "transfers",
-            "type": {"kind": "dict", "key": "uint", "keyFormat": 32, "value": "Transfer", "valueFormat": "ref"}
-        }, {"name": "transfersCount", "type": {"kind": "simple", "type": "uint", "optional": false, "format": 32}}]
-    },
-    {
-        "name": "BalanceInfo",
-        "header": null,
-        "fields": [{
             "name": "totalDeposits",
             "type": {"kind": "simple", "type": "uint", "optional": false, "format": "coins"}
         }, {
-            "name": "totalWithdrawals",
+            "name": "dailyIncome",
             "type": {"kind": "simple", "type": "uint", "optional": false, "format": "coins"}
         }, {
-            "name": "totalEarns",
+            "name": "dailyIncomeHistorical",
             "type": {"kind": "simple", "type": "uint", "optional": false, "format": "coins"}
         }, {
-            "name": "referralBonus",
+            "name": "bonus",
             "type": {"kind": "simple", "type": "uint", "optional": false, "format": "coins"}
-        }, {"name": "dailyIncome", "type": {"kind": "simple", "type": "uint", "optional": false, "format": "coins"}}]
+        }, {
+            "name": "bonusHistorical",
+            "type": {"kind": "simple", "type": "uint", "optional": false, "format": "coins"}
+        }, {
+            "name": "round",
+            "type": {"kind": "simple", "type": "uint", "optional": false, "format": 8}
+        }, {"name": "currentRound", "type": {"kind": "simple", "type": "Round", "optional": true}}]
     },
 ]
 
-const MainContract_getters: ABIGetter[] = [
+const EarnContract_getters: ABIGetter[] = [
     {
-        "name": "investorInfo",
-        "arguments": [{"name": "address", "type": {"kind": "simple", "type": "address", "optional": false}}],
-        "returnType": {"kind": "simple", "type": "Investor", "optional": true}
+        "name": "totalDeposit",
+        "arguments": [],
+        "returnType": {"kind": "simple", "type": "ContractMeta", "optional": false}
     },
     {
-        "name": "balanceInfo",
-        "arguments": [{"name": "address", "type": {"kind": "simple", "type": "address", "optional": false}}],
-        "returnType": {"kind": "simple", "type": "BalanceInfo", "optional": true}
+        "name": "minDeposit",
+        "arguments": [],
+        "returnType": {"kind": "simple", "type": "int", "optional": false, "format": 257}
     },
     {
-        "name": "minDepositValue",
+        "name": "maxDeposit",
         "arguments": [],
         "returnType": {"kind": "simple", "type": "int", "optional": false, "format": 257}
     },
@@ -888,34 +1097,34 @@ const MainContract_getters: ABIGetter[] = [
     },
 ]
 
-const MainContract_receivers: ABIReceiver[] = [
+const EarnContract_receivers: ABIReceiver[] = [
     {"receiver": "internal", "message": {"kind": "typed", "type": "Deposit"}},
     {"receiver": "internal", "message": {"kind": "typed", "type": "Deploy"}},
 ]
 
-export class MainContract implements Contract {
+export class EarnContract implements Contract {
 
-    static async init(id: bigint, minDeposit: bigint) {
-        return await MainContract_init(id, minDeposit);
+    static async init(id: bigint, minDeposit: bigint, founder: Address) {
+        return await EarnContract_init(id, minDeposit, founder);
     }
 
-    static async fromInit(id: bigint, minDeposit: bigint) {
-        const init = await MainContract_init(id, minDeposit);
+    static async fromInit(id: bigint, minDeposit: bigint, founder: Address) {
+        const init = await EarnContract_init(id, minDeposit, founder);
         const address = contractAddress(0, init);
-        return new MainContract(address, init);
+        return new EarnContract(address, init);
     }
 
     static fromAddress(address: Address) {
-        return new MainContract(address);
+        return new EarnContract(address);
     }
 
     readonly address: Address;
     readonly init?: { code: Cell, data: Cell };
     readonly abi: ContractABI = {
-        types: MainContract_types,
-        getters: MainContract_getters,
-        receivers: MainContract_receivers,
-        errors: MainContract_errors,
+        types: EarnContract_types,
+        getters: EarnContract_getters,
+        receivers: EarnContract_receivers,
+        errors: EarnContract_errors,
     };
 
     private constructor(address: Address, init?: { code: Cell, data: Cell }) {
@@ -943,27 +1152,23 @@ export class MainContract implements Contract {
 
     }
 
-    async getInvestorInfo(provider: ContractProvider, address: Address) {
+    async getTotalDeposit(provider: ContractProvider) {
         let builder = new TupleBuilder();
-        builder.writeAddress(address);
-        let source = (await provider.get('investorInfo', builder.build())).stack;
-        const result_p = source.readTupleOpt();
-        const result = result_p ? loadTupleInvestor(result_p) : null;
+        let source = (await provider.get('totalDeposit', builder.build())).stack;
+        const result = loadTupleContractMeta(source);
         return result;
     }
 
-    async getBalanceInfo(provider: ContractProvider, address: Address) {
+    async getMinDeposit(provider: ContractProvider) {
         let builder = new TupleBuilder();
-        builder.writeAddress(address);
-        let source = (await provider.get('balanceInfo', builder.build())).stack;
-        const result_p = source.readTupleOpt();
-        const result = result_p ? loadTupleBalanceInfo(result_p) : null;
+        let source = (await provider.get('minDeposit', builder.build())).stack;
+        let result = source.readBigNumber();
         return result;
     }
 
-    async getMinDepositValue(provider: ContractProvider) {
+    async getMaxDeposit(provider: ContractProvider) {
         let builder = new TupleBuilder();
-        let source = (await provider.get('minDepositValue', builder.build())).stack;
+        let source = (await provider.get('maxDeposit', builder.build())).stack;
         let result = source.readBigNumber();
         return result;
     }
