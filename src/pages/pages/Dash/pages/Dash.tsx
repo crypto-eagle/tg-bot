@@ -8,7 +8,7 @@ export const Dash = () => {
     return (
         <div>
             DASH
-            <div> minDeposit: {api.minDeposit.isLoading ? 'Loading' : api.minDeposit.state} </div>
+            {/*<div> minDeposit: {api.minDeposit.isLoading ? 'Loading' : api.minDeposit.state} </div>*/}
             {/*<div> minDeposit: {smartContract.maxDeposit.isLoading ? 'Loading' : smartContract.maxDeposit.data} </div>*/}
         </div>
     );
