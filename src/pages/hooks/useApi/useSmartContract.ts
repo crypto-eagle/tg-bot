@@ -1,7 +1,7 @@
 import {useTonClient} from "../useTonClient";
-import {useAsyncInitialize} from "../useAsyncInitialize";
 import {Address, OpenedContract} from "ton-core";
 import {EarnContract} from "@core/contracts/tact_EarnContract";
+import {useAsyncInitialize} from "@hooks/useAsyncInitialize";
 
 export function useSmartContract(): OpenedContract<EarnContract> | undefined {
     const {client} = useTonClient();

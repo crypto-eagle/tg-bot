@@ -1,10 +1,11 @@
 import './Layout.scss';
-import {Outlet, useNavigate, } from "react-router-dom";
-import {useTonConnect} from "@hooks/useTonConnect";
-import {useEffect} from "react";
+
+import {Outlet, useNavigate} from "react-router-dom";
+import React, {useContext, useEffect} from "react";
+import {TonConnectContext} from "@core/providers/ton-connect.provider";
 
 export const Layout = () => {
-    const {connected} = useTonConnect();
+    const {connected} = useContext(TonConnectContext);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -13,7 +14,5 @@ export const Layout = () => {
         }
     }, [navigate, connected]);
 
-    return (
-        <Outlet/>
-    );
+    return (connected ? <Outlet/> : <></>);
 };

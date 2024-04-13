@@ -1,25 +1,25 @@
-import {fromNano, OpenedContract} from "ton-core";
+import {Address, fromNano, OpenedContract} from "ton-core";
 import {EarnContract} from "@core/contracts/tact_EarnContract";
 import {useEffect, useState} from "react";
 
-export function useMinDeposit(contract: OpenedContract<EarnContract> | undefined) {
+export function useMinDeposit(contract: OpenedContract<EarnContract> | undefined, wallet: Address | null) {
     const [state, setState] = useState<string | null>();
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
     useEffect(() => {
         async function fetch() {
-            if (!contract) {
+            if (!contract || !wallet) {
                 return;
             }
             setIsLoading(true);
             setState(null);
 
             try {
-                const value = await contract.getMinDeposit();
+                const value = await contract.getMinDepositAmount(wallet);
                 setState(fromNano(value));
             }
             catch (e) {
-                console.log('e', e);
+                console.error('e', e);
             }
             finally {
                 setIsLoading(false);
@@ -28,7 +28,7 @@ export function useMinDeposit(contract: OpenedContract<EarnContract> | undefined
 
         fetch().then();
 
-    }, [contract]);
+    }, [contract, wallet]);
 
     return {state, isLoading}
 }

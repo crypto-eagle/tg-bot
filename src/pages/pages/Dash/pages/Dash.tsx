@@ -1,15 +1,38 @@
 import './Dash.scss';
-import {useApi} from "@hooks/useApi";
+
+import {useContext, useEffect, useState} from "react";
+import {SmartContractContext} from "@core/providers/smart-contract.provider";
+import {IProfile} from "@core/models";
+
+interface StateType {
+    maxDeposit: string;
+    minDeposit: string;
+    profile: IProfile;
+}
 
 export const Dash = () => {
-    const api = useApi();
-    // console.log('smartContract.minDeposit', smartContract.minDeposit)
+    const api = useContext(SmartContractContext);
+    const [state, setState] = useState<StateType | undefined>();
+
+    useEffect(() => {
+        if (!api) {
+            return;
+        }
+
+        (async () => {
+            setState({
+                minDeposit: await api.getters.minDeposit(),
+                maxDeposit: await api.getters.maxDeposit(),
+                profile: {} as IProfile// await api.getters.profile(),
+            })
+        })();
+    }, [api]);
 
     return (
         <div>
             DASH
-            {/*<div> minDeposit: {api.minDeposit.isLoading ? 'Loading' : api.minDeposit.state} </div>*/}
-            {/*<div> minDeposit: {smartContract.maxDeposit.isLoading ? 'Loading' : smartContract.maxDeposit.data} </div>*/}
+            <>{state ? JSON.stringify(state) : 'Loading'}
+            </>
         </div>
     );
 };
