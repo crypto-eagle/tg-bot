@@ -23,7 +23,6 @@ export function useTonConnect(): ITonConnect {
         },
         connected: !!wallet?.account.address,
         wallet: wallet?.account.address,
-        network: wallet?.account.chain ?? undefined,
-        loaded: true
+        network: wallet?.account.chain ?? undefined
     };
 }

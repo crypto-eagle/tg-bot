@@ -31,7 +31,7 @@ export const Dash = () => {
     return (
         <div>
             DASH
-            <>{state ? JSON.stringify(state) : 'Loading'}
+            <>{state ? JSON.stringify(state) : 'Loading..'}
             </>
         </div>
     );

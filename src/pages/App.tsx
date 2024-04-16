@@ -9,7 +9,6 @@ import {LangChooser} from "./components/LangChooser";
 import {Header} from "./components/Header";
 import {AppLayout} from "./components/AppLayout";
 import {TonConnectProvider} from "@core/providers/ton-connect.provider";
-import {SmartContractProvider} from "@core/providers/smart-contract.provider";
 
 
 export const App = () => {
@@ -19,9 +18,7 @@ export const App = () => {
                 <Header w="100%" gap="24px" justifyContent="space-between"/>
 
                 <TonConnectProvider>
-                    <SmartContractProvider>
-                        <RouterProvider router={routing}/>
-                    </SmartContractProvider>
+                    <RouterProvider router={routing}/>
                 </TonConnectProvider>
 
                 <LangChooser/>

@@ -3,6 +3,7 @@ import './Layout.scss';
 import {Outlet, useNavigate} from "react-router-dom";
 import React, {useContext, useEffect} from "react";
 import {TonConnectContext} from "@core/providers/ton-connect.provider";
+import {SmartContractProvider} from "@core/providers/smart-contract.provider";
 
 export const Layout = () => {
     const {connected} = useContext(TonConnectContext);
@@ -14,5 +15,9 @@ export const Layout = () => {
         }
     }, [navigate, connected]);
 
-    return (connected ? <Outlet/> : <></>);
+    return (connected ?
+        <SmartContractProvider>
+            <Outlet/>
+        </SmartContractProvider> :
+        <></>);
 };
