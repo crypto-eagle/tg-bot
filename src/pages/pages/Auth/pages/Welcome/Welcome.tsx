@@ -8,6 +8,7 @@ import { WelcomeSlides } from "./components/WelcomeSlides";
 import { NextButton } from "./components/NextButton";
 import { Header } from "../../../Dash/pages/components/Header";
 import { Deposit } from "../../../Dash/pages/components/Deposit";
+import { DepositStatus } from "../../../Dash/pages/components/DepositStatus";
 
 export const Welcome = () => {
   const { state, setSwiper } = useSwiperState();
@@ -21,6 +22,7 @@ export const Welcome = () => {
     >
       <div></div>
       <Header />
+      <DepositStatus />
       <Deposit />
       {/* <Box w={"full"}>
         <WelcomeSwiper setSwiper={setSwiper} setIndex={state?.setIndex} />
