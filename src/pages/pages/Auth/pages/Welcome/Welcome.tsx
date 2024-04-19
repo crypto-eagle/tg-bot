@@ -9,6 +9,7 @@ import { NextButton } from "./components/NextButton";
 import { Header } from "../../../Dash/pages/components/Header";
 import { Deposit } from "../../../Dash/pages/components/Deposit";
 import { Buttons } from "../../../Dash/pages/components/Buttons";
+import { ReplenishmentAmount } from "../../../Dash/pages/components/ReplenishmentAmount";
 import { DepositStatus } from "../../../Dash/pages/components/DepositStatus";
 
 export const Welcome = () => {
@@ -23,7 +24,8 @@ export const Welcome = () => {
     >
       <div></div>
       <Header />
-      <Buttons />
+      <ReplenishmentAmount />
+      <Buttons buttonsContent={["Withdraw", "Rienvest"]} />
       <DepositStatus />
       <Deposit />
       {/* <Box w={"full"}>
