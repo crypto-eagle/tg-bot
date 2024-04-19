@@ -7,6 +7,7 @@ import { WelcomeSwiper } from "./components/WelcomeSwiper";
 import { WelcomeSlides } from "./components/WelcomeSlides";
 import { NextButton } from "./components/NextButton";
 import { Header } from "../../../Dash/pages/components/Header";
+import { Deposit } from "../../../Dash/pages/components/Deposit";
 
 export const Welcome = () => {
   const { state, setSwiper } = useSwiperState();
@@ -18,9 +19,10 @@ export const Welcome = () => {
       justifyContent="space-between"
       spacing="15dvh"
     >
-      <Header />
       <div></div>
-      <Box w={"full"}>
+      <Header />
+      <Deposit />
+      {/* <Box w={"full"}>
         <WelcomeSwiper setSwiper={setSwiper} setIndex={state?.setIndex} />
       </Box>
       <HStack>
@@ -32,7 +34,7 @@ export const Welcome = () => {
         isEnd={state?.isEnd}
         next={state?.next}
         first={state?.first}
-      />
+      /> */}
     </VStack>
   );
 };
