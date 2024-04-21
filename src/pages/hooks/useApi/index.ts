@@ -6,9 +6,10 @@ import {useSmartContract} from "./useSmartContract";
 import {getMinDeposit} from "./functions/getMinDeposit";
 import {getMaxDeposit} from "./functions/getMaxDeposit";
 import {getProfile} from "./functions/getProfile";
+import {deposit} from "./functions/deposit";
 
 export function useApi(): IApiResult | undefined {
-    const {wallet} = useContext(TonConnectContext);
+    const {wallet, sender} = useContext(TonConnectContext);
     const contract = useSmartContract();
 
     const [state, setState] = useState<IApiResult>();
@@ -26,10 +27,12 @@ export function useApi(): IApiResult | undefined {
                 minDeposit: () => getMinDeposit(contract, address),
                 maxDeposit: () => getMaxDeposit(contract, address),
                 profile: () => getProfile(contract, address)
+            },
+            methods: {
+                deposit: (amount: bigint, upLine: Address) => contract ? deposit(contract, sender, amount, upLine) : null
             }
-            // deposit: (amount: bigint, upLine: Address) => contract ? deposit(contract, sender, amount, upLine) : null
         });
-    }, [contract, wallet]);
+    }, [contract, wallet, sender]);
 
     return state;
 }

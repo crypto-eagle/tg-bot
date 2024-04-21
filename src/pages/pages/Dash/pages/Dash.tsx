@@ -7,7 +7,7 @@ import {IProfile} from "@core/models";
 interface StateType {
     maxDeposit: string;
     minDeposit: string;
-    profile: IProfile;
+    profile: IProfile | null;
 }
 
 export const Dash = () => {
@@ -23,7 +23,7 @@ export const Dash = () => {
             setState({
                 minDeposit: await api.getters.minDeposit(),
                 maxDeposit: await api.getters.maxDeposit(),
-                profile: {} as IProfile// await api.getters.profile(),
+                profile: await api.getters.profile(),
             })
         })();
     }, [api]);
