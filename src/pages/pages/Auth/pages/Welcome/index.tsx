@@ -1,11 +1,13 @@
-import "./Welcome.scss";
+import "./index.scss";
+
+import React from "react";
 import { Box, HStack, VStack } from "@chakra-ui/react";
 import { useSwiperState } from "@hooks/useSwiperState";
-import { WelcomeSwiper } from "./components/WelcomeSwiper";
-import { WelcomeSlides } from "./components/WelcomeSlides";
-import { NextButton } from "./components/NextButton";
+import WelcomeSwiper from "./components/WelcomeSwiper";
+import WelcomeSlides from "./components/WelcomeSlides";
+import NextButton from "./components/NextButton";
 
-export const Welcome = () => {
+export default function Welcome() {
   const { state, setSwiper } = useSwiperState();
 
   return (
@@ -15,9 +17,8 @@ export const Welcome = () => {
       justifyContent="space-between"
       spacing="15dvh"
     >
-      <div></div>
-      <Box w={"full"}>
-        <WelcomeSwiper setSwiper={setSwiper} setIndex={state?.setIndex} />
+      <Box w="full">
+        <WelcomeSwiper setSwiper={setSwiper} />
       </Box>
       <HStack>
         <WelcomeSlides slides={state?.slides} index={state?.index} />
@@ -31,4 +32,4 @@ export const Welcome = () => {
       />
     </VStack>
   );
-};
+}

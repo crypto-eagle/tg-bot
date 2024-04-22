@@ -1,12 +1,14 @@
+/* eslint-disable react/require-default-props, react/no-array-index-key */
+
 import "swiper/css";
+import React, { Dispatch, SetStateAction } from "react";
+
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import { Heading, Stack, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import { Dispatch, SetStateAction } from "react";
 
 interface WelcomeSwiperProps {
   setSwiper: Dispatch<SetStateAction<SwiperClass | undefined>>;
-  setIndex?: (value: ((prevState: number) => number) | number) => void;
 }
 
 const slides = [
@@ -24,11 +26,12 @@ const slides = [
   },
 ];
 
-export const WelcomeSwiper = (props: WelcomeSwiperProps) => {
+export default function WelcomeSwiper(props: WelcomeSwiperProps) {
   const { t } = useTranslation();
+  const { setSwiper } = props;
 
   return (
-    <Swiper onSwiper={props.setSwiper}>
+    <Swiper onSwiper={setSwiper}>
       {slides.map((slide, index) => (
         <SwiperSlide key={index}>
           <Stack textAlign="center">
@@ -39,4 +42,4 @@ export const WelcomeSwiper = (props: WelcomeSwiperProps) => {
       ))}
     </Swiper>
   );
-};
+}

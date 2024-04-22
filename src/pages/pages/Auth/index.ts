@@ -1,2 +1,2 @@
-export * from './Layout';
-export * from './pages/Welcome';
+export { default as Layout } from "./Layout";
+export { default as Welcome } from "./pages/Welcome";

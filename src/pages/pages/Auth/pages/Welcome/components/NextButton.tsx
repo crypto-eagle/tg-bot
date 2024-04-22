@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React from "react";
 import { Button } from "@chakra-ui/react";
 import { useColors } from "@hooks/useColors";
@@ -16,41 +17,33 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-const SubButton = (props: ButtonProps) => {
+function SubButton({ onClick, title, w }: ButtonProps) {
   const colors = useColors();
 
   return (
     <Button
-      w={props.w}
-      rounded={"full"}
+      w={w}
+      rounded="full"
       borderWidth="3px"
       borderColor={colors.cyan}
       bg={colors.gray}
-      onClick={props?.onClick}
+      onClick={onClick}
       _hover={{
         bg: colors.gray,
       }}
     >
-      {props.title}
+      {title}
     </Button>
   );
-};
+}
 
-export const NextButton = (props: NextButtonProps) => {
+export default function NextButton({ first, isEnd, next, w }: NextButtonProps) {
   const { t } = useTranslation();
 
   return (
     <>
-      {!props?.isEnd && (
-        <SubButton w={props.w} title={t("slides.next")} onClick={props?.next} />
-      )}
-      {props?.isEnd && (
-        <SubButton
-          w={props.w}
-          title={t("slides.first")}
-          onClick={props?.first}
-        />
-      )}
+      {!isEnd && <SubButton w={w} title={t("slides.next")} onClick={next} />}
+      {isEnd && <SubButton w={w} title={t("slides.first")} onClick={first} />}
     </>
   );
-};
+}

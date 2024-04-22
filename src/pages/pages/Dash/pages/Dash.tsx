@@ -1,22 +1,21 @@
 import "./Dash.scss";
+import React, { useContext, useEffect, useState } from "react";
 
-import { useContext, useEffect, useState } from "react";
 import { SmartContractContext } from "@core/providers/smart-contract.provider";
 import { IProfile } from "@core/models";
 
 import { Header } from "./components/Header";
 import { Deposit } from "./components/Deposit";
 import { Buttons } from "./components/Buttons";
-import { ReplenishmentAmount } from "./components/ReplenishmentAmount";
 import { DepositStatus } from "./components/DepositStatus";
 
 interface StateType {
   maxDeposit: string;
   minDeposit: string;
-  profile: IProfile;
+  profile: IProfile | null;
 }
 
-export const Dash = () => {
+export default function Dash() {
   const api = useContext(SmartContractContext);
   const [state, setState] = useState<StateType | undefined>();
 
@@ -29,7 +28,7 @@ export const Dash = () => {
       setState({
         minDeposit: await api.getters.minDeposit(),
         maxDeposit: await api.getters.maxDeposit(),
-        profile: {} as IProfile, // await api.getters.profile(),
+        profile: await api.getters.profile(),
       });
     })();
   }, [api]);
@@ -41,7 +40,7 @@ export const Dash = () => {
       {/* <ReplenishmentAmount /> */}
       <Deposit />
       <Buttons buttonsContent={["Withdraw", "Rienvest"]} />
-      <>{state ? JSON.stringify(state) : "Loading.."}</>
+      {state ? JSON.stringify(state) : "Loading.."}
     </div>
   );
-};
+}

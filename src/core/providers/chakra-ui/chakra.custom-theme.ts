@@ -1,36 +1,39 @@
-import {ColorMode, ColorModeContextType, extendTheme, ThemeConfig} from "@chakra-ui/react";
+import {
+  ColorMode,
+  ColorModeContextType,
+  extendTheme,
+  ThemeConfig,
+} from "@chakra-ui/react";
 
 const config: ThemeConfig = {
-    initialColorMode: "dark",
-    useSystemColorMode: false
+  initialColorMode: "dark",
+  useSystemColorMode: false,
 };
 export const chakraCustomTheme = extendTheme({
-    config
+  config,
 });
 
-const chakraColorModeStoreKey = 'chakra-ui-color-mode';
-const customColorModeStoreKey = 'custom-color-mode-store';
+const chakraColorModeStoreKey = "chakra-ui-color-mode";
+const customColorModeStoreKey = "custom-color-mode-store";
 
 export function deleteColorModeInLocalStorage() {
-    window.localStorage.removeItem(chakraColorModeStoreKey);
-    console.log('deleted "chakra-ui-color-mode" from local storage');
-    console.log("You can now refresh to see how a first visit looks like.");
+  window.localStorage.removeItem(chakraColorModeStoreKey);
 }
 
 export function fixColorModeInLocalStorage(colorMode: ColorModeContextType) {
-    const storedMode = localStorage.getItem(chakraColorModeStoreKey);
+  const storedMode = localStorage.getItem(chakraColorModeStoreKey);
 
-    if (colorMode.colorMode === storedMode) {
-        return;
-    }
+  if (colorMode.colorMode === storedMode) {
+    return;
+  }
 
-    if (localStorage.getItem(customColorModeStoreKey) !== colorMode.colorMode) {
-        return;
-    }
+  if (localStorage.getItem(customColorModeStoreKey) !== colorMode.colorMode) {
+    return;
+  }
 
-    colorMode.setColorMode(colorMode.colorMode);
+  colorMode.setColorMode(colorMode.colorMode);
 }
 
 export function setCustomColorModeStoreKey(color: ColorMode) {
-    localStorage.setItem(customColorModeStoreKey, color);
+  localStorage.setItem(customColorModeStoreKey, color);
 }

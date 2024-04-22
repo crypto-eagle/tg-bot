@@ -5,7 +5,7 @@ import React, { useContext, useEffect } from "react";
 import { TonConnectContext } from "@core/providers/ton-connect.provider";
 import { SmartContractProvider } from "@core/providers/smart-contract.provider";
 
-export const Layout = () => {
+export default function Layout() {
   const { connected } = useContext(TonConnectContext);
   const navigate = useNavigate();
 
@@ -20,6 +20,6 @@ export const Layout = () => {
       <Outlet />
     </SmartContractProvider>
   ) : (
-    <></>
+    ""
   );
-};
+}

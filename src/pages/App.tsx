@@ -3,14 +3,14 @@ import "../core/localization/l18n";
 
 import { RouterProvider } from "react-router-dom";
 import React from "react";
-import { routing } from "./routing";
 import { Stack } from "@chakra-ui/react";
+import { TonConnectProvider } from "@core/providers/ton-connect.provider";
+import routing from "./routing";
 import { LangChooser } from "./components/LangChooser";
 import { Header } from "./components/Header";
 import { AppLayout } from "./components/AppLayout";
-import { TonConnectProvider } from "@core/providers/ton-connect.provider";
 
-export const App = () => {
+export default function App() {
   return (
     <AppLayout>
       <Stack
@@ -30,4 +30,4 @@ export const App = () => {
       </Stack>
     </AppLayout>
   );
-};
+}
