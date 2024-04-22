@@ -1,5 +1,39 @@
 {
   "extends": [
-    "react-app"
-  ]
+    "react-app",
+    "airbnb",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": [
+    "jsx-a11y",
+    "prettier"
+  ],
+  "rules": {
+    "jsx-quotes": "error",
+    "import/extensions": [
+      "off",
+      "ignorePackages"
+    ],
+    "import/no-unresolved": [
+      "off"
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".tsx"
+        ]
+      }
+    ],
+    "import/prefer-default-export": [
+      "off"
+    ],
+    "react/jsx-props-no-spreading": [
+      "off"
+    ]
+  }
 }

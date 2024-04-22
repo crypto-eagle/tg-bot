@@ -1,51 +1,49 @@
+/* eslint-disable react/require-default-props */
 import React from "react";
-import {Button} from "@chakra-ui/react";
-import {useColors} from "@hooks/useColors";
-import {useTranslation} from "react-i18next";
-
+import { Button } from "@chakra-ui/react";
+import { useColors } from "@hooks/useColors";
+import { useTranslation } from "react-i18next";
 
 interface NextButtonProps {
-    w: string;
-    isEnd?: boolean;
-    next?: () => void;
-    first?: () => void;
+  w: string;
+  isEnd?: boolean;
+  next?: () => void;
+  first?: () => void;
 }
 
 interface ButtonProps {
-    w: string;
-    title: string;
-    onClick?: () => void;
+  w: string;
+  title: string;
+  onClick?: () => void;
 }
 
-const SubButton = (props: ButtonProps) => {
-    const colors = useColors();
+function SubButton({ onClick, title, w }: ButtonProps) {
+  const colors = useColors();
 
-    return <Button
-        w={props.w}
-        rounded={"full"}
-        borderWidth="3px"
-        borderColor={colors.cyan}
-        bg={colors.gray}
-        onClick={props?.onClick}
-        _hover={{
-            bg: colors.gray,
-        }}
+  return (
+    <Button
+      w={w}
+      rounded="full"
+      borderWidth="3px"
+      borderColor={colors.cyan}
+      bg={colors.gray}
+      onClick={onClick}
+      _hover={{
+        bg: colors.gray,
+      }}
     >
-        {props.title}
+      {title}
     </Button>
+  );
 }
 
-export const NextButton = (props: NextButtonProps) => {
-    const {t} = useTranslation();
+export default function NextButton({ first, isEnd, next, w }: NextButtonProps) {
+  const { t } = useTranslation();
 
-    return (
-        <>
-            {!props?.isEnd && (
-                <SubButton w={props.w} title={t("slides.next")} onClick={props?.next}/>
-            )}
-            {props?.isEnd && (
-                <SubButton w={props.w} title={t("slides.first")} onClick={props?.first}/>
-            )}
-        </>
-    );
-};
+  return (
+    <>
+      {!isEnd && <SubButton w={w} title={t("slides.next")} onClick={next} />}
+      {isEnd && <SubButton w={w} title={t("slides.first")} onClick={first} />}
+    </>
+  );
+}

@@ -1,7 +1,9 @@
-import {ChakraProvider} from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
-import {chakraCustomTheme} from "./chakra.custom-theme";
+import { chakraCustomTheme } from "./chakra.custom-theme";
 
-export const ChakraUIProvider = (props: { children: React.ReactNode }) => (
-    <ChakraProvider theme={chakraCustomTheme}>{props.children}</ChakraProvider>
-);
+export function ChakraUIProvider(props: { children: React.ReactNode }) {
+  const { children } = props;
+
+  return <ChakraProvider theme={chakraCustomTheme}>{children}</ChakraProvider>;
+}
