@@ -13,6 +13,7 @@ export function Buttons({ buttonsContent }: Props) {
         if (index % 2 === 0)
           return (
             <Button
+              w="50%"
               color="white"
               colorScheme="blue"
               py="20px"
@@ -25,6 +26,7 @@ export function Buttons({ buttonsContent }: Props) {
           );
         return (
           <Button
+            w="50%"
             color="white"
             colorScheme="green"
             py="20px"
