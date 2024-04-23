@@ -1,7 +1,7 @@
 import React from "react";
 
 import { AddIcon } from "@chakra-ui/icons";
-import { Box, Center, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, IconButton, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 
 export function Header() {
@@ -24,16 +24,15 @@ export function Header() {
           ton
         </Box>
       </Box>
-      {/* не знаю как сделать побольше, 
-      время потратил, но оно так и не заработало */}
-      <Center
+
+      <IconButton
+        aria-label="Add"
         h="60px"
         w="60px"
-        borderRadius="50%"
         border="3px rgb(9, 221, 250) solid"
-      >
-        <AddIcon />
-      </Center>
+        isRound
+        icon={<AddIcon />}
+      />
     </Flex>
   );
 }
