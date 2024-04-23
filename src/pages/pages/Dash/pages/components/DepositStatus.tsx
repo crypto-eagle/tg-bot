@@ -15,13 +15,13 @@ export function DepositStatus() {
       bg="rgba(255, 255, 255, 0.2)"
       border="3px solid rgb(9, 221, 250)"
     >
-      <Flex justifyContent="space-between" alignItems="center">
+      <Flex justifyContent="space-between" alignItems="center" gap="10px">
         <Text>{t("dash.depositStatus.heading.header")}:</Text>
         <Box bg="rgb(56, 161, 105)" py="3px" px="20px" borderRadius="3xl">
           {t("dash.depositStatus.heading.content")}
         </Box>
       </Flex>
-      <Flex my="20px" justifyContent="space-between" alignItems="center">
+      <Flex my="20px" justifyContent="space-between" gap="20px">
         <Box>
           <Text color="rgb(22, 240, 201)">
             {t("dash.depositStatus.content.earned")}:
@@ -46,7 +46,7 @@ export function DepositStatus() {
         </Box>
       </Flex>
       <Box>
-        <Text>10 of 310 %</Text>
+        <Text>10 {t("dash.depositStatus.percent")} 310 %</Text>
         <Progress value={10} borderRadius="xl" size="sm" mt="10px" />
       </Box>
     </Box>

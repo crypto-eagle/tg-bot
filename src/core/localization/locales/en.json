@@ -32,7 +32,8 @@
       "content": {
         "earned": "Earned",
         "invest": "Invest"
-      }
+      },
+      "percent": "of"
     },
     "deposit": {
       "title": "Available for withdraw",

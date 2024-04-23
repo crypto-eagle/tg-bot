@@ -8,7 +8,7 @@ interface Props {
 
 export function Buttons({ buttonsContent }: Props) {
   return (
-    <Flex w="100%" justifyContent="space-around">
+    <Flex w="100%" justifyContent="space-around" gap="10px">
       {buttonsContent.map((el, index) => {
         if (index % 2 === 0)
           return (

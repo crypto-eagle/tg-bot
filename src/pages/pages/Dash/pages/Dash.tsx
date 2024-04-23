@@ -37,7 +37,7 @@ export default function Dash() {
   }, [api]);
 
   return (
-    <div>
+    <>
       <Header />
       <DepositStatus />
       <ReplenishmentAmount />
@@ -49,6 +49,6 @@ export default function Dash() {
         ]}
       />
       {state ? JSON.stringify(state) : "Loading.."}
-    </div>
+    </>
   );
 }
