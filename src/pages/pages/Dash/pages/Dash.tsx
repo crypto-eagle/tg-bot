@@ -1,4 +1,5 @@
 import "./Dash.scss";
+import { useTranslation } from "react-i18next";
 import React, { useContext, useEffect, useState } from "react";
 
 import { SmartContractContext } from "@core/providers/smart-contract.provider";
@@ -8,6 +9,7 @@ import { Header } from "./components/Header";
 import { Deposit } from "./components/Deposit";
 import { Buttons } from "./components/Buttons";
 import { DepositStatus } from "./components/DepositStatus";
+import { ReplenishmentAmount } from "./components/ReplenishmentAmount";
 
 interface StateType {
   maxDeposit: string;
@@ -16,6 +18,7 @@ interface StateType {
 }
 
 export default function Dash() {
+  const { t } = useTranslation();
   const api = useContext(SmartContractContext);
   const [state, setState] = useState<StateType | undefined>();
 
@@ -37,9 +40,14 @@ export default function Dash() {
     <div>
       <Header />
       <DepositStatus />
-      {/* <ReplenishmentAmount /> */}
+      <ReplenishmentAmount />
       <Deposit />
-      <Buttons buttonsContent={["Withdraw", "Rienvest"]} />
+      <Buttons
+        buttonsContent={[
+          t("dash.buttons.withdraw"),
+          t("dash.buttons.rienvest"),
+        ]}
+      />
       {state ? JSON.stringify(state) : "Loading.."}
     </div>
   );

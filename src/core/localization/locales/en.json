@@ -19,5 +19,35 @@
     },
     "next": "Next",
     "first": "First"
+  },
+  "dash": {
+    "header": {
+      "title": "Invested in project"
+    },
+    "depositStatus": {
+      "heading": {
+        "header": "Deposit status",
+        "content": "Active"
+      },
+      "content": {
+        "earned": "Earned",
+        "invest": "Invest"
+      }
+    },
+    "deposit": {
+      "title": "Available for withdraw",
+      "totalWithdraw": "Total withdraw",
+      "DEPOSIT": "DEPOSIT"
+    },
+    "buttons": {
+      "withdraw": "Withdraw",
+      "rienvest": "Rienvest"
+    },
+    "replenishmentAmount": {
+      "title": "indicate the replenishment amount",
+      "amount": "amount",
+      "cancel": "Cancel",
+      "contribute": "Contribute"
+    }
   }
 }

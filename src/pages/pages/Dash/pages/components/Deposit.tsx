@@ -1,13 +1,18 @@
 import React from "react";
 
 import { Box, Flex, Text } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
 export function Deposit() {
+  const { t } = useTranslation();
+
   return (
     <Box w="100%" fontWeight="bold" p="6" borderRadius="lg" bg="#1A181B">
-      <Text>Available for withdraw</Text>
+      <Text>{t("dash.deposit.title")}</Text>
       <Flex justifyContent="space-between" alignItems="center" my="20px">
-        <Text color="rgb(22, 240, 201)">Total withdraw:</Text>
+        <Text color="rgb(22, 240, 201)">
+          {t("dash.deposit.totalWithdraw")}:
+        </Text>
         <Box textTransform="uppercase">
           {/* Вот тут я не знаю как сделать 
               чтобы оно не переносилось */}
@@ -16,7 +21,7 @@ export function Deposit() {
         </Box>
       </Flex>
       <Flex justifyContent="space-between" alignItems="center" my="20px">
-        <Text textTransform="uppercase">DEPOSIT:</Text>
+        <Text textTransform="uppercase">{t("dash.deposit.DEPOSIT")}:</Text>
         <Box color="rgb(22, 240, 201)" textTransform="uppercase">
           {/* Вот тут я не знаю как сделать 
               чтобы оно не переносилось */}
