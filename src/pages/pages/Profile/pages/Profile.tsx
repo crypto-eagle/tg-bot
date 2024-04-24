@@ -6,6 +6,7 @@ import { IProfile } from "@core/models";
 
 import { Header } from "../../Dash/pages/components/Header";
 import { UserInfo } from "./components/UserInfo";
+import { UserInfoSecondary } from "./components/UserInfoSecondary";
 import { Statistics } from "./components/Statistics";
 import { Consultation } from "./components/Consultation";
 
@@ -38,6 +39,7 @@ export default function Profile() {
     <>
       <Header />
       <UserInfo />
+      <UserInfoSecondary />
       <Statistics />
       <Consultation />
       {state ? JSON.stringify(state) : "Loading.."}
