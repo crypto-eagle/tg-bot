@@ -13,5 +13,6 @@ export function useColors() {
     gray: useColorModeValue("blackAlpha.200", "whiteAlpha.400"),
     green: useColorModeValue("rgb(22, 240, 201)", "rgb(22, 240, 201)"),
     darkgreen: useColorModeValue("rgb(56, 161, 105)", "rgb(56, 161, 105)"),
+    turquoise: useColorModeValue("rgb(9, 221, 250)", "rgb(9, 221, 250)"),
   };
 }

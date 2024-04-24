@@ -14,8 +14,8 @@ export function DepositStatus() {
       w="100%"
       fontWeight="bold"
       borderRadius="20px"
-      bg="rgba(255, 255, 255, 0.2)"
-      border="3px solid rgb(9, 221, 250)"
+      bg="whiteAlpha.400"
+      border={`3px solid ${colors.turquoise}`}
     >
       <Flex justifyContent="space-between" alignItems="center" gap="10px">
         <Text>{t("dash.depositStatus.heading.header")}:</Text>

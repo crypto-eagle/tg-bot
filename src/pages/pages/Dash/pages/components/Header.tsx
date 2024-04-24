@@ -31,7 +31,7 @@ export function Header() {
         aria-label="Add"
         h="60px"
         w="60px"
-        border="3px rgb(9, 221, 250) solid"
+        border={`3px solid ${colors.turquoise}`}
         isRound
         icon={<AddIcon />}
       />
