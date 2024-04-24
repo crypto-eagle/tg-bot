@@ -5,6 +5,7 @@ import { SmartContractContext } from "@core/providers/smart-contract.provider";
 import { IProfile } from "@core/models";
 
 import { Header } from "../../Dash/pages/components/Header";
+import { UserInfo } from "./components/UserInfo";
 
 interface StateType {
   maxDeposit: string;
@@ -34,6 +35,7 @@ export default function Profile() {
   return (
     <>
       <Header />
+      <UserInfo />
       {state ? JSON.stringify(state) : "Loading.."}
     </>
   );
