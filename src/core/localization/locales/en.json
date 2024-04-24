@@ -51,5 +51,19 @@
       "cancel": "Cancel",
       "contribute": "Contribute"
     }
+  },
+  "profile": {
+    "userInfo": {
+      "youInProject": "You are in the project",
+      "peopleOnProject": "People on the project",
+      "depositStatus": {
+        "title": "Deposit status",
+        "notActivated": "Not activated",
+        "activated": "Activated"
+      },
+      "turnoverStructure": "Turnover structure",
+      "incomeStructure": "Income structure",
+      "numberOfPartners": "Number of partners"
+    }
   }
 }

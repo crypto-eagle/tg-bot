@@ -4,9 +4,11 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 // import { LuUser2 } from "react-icons/lu";
 // import { MdOutlineAccessTime } from "react-icons/md";
 import { useColors } from "@hooks/useColors";
+import { useTranslation } from "react-i18next";
 import { LightBox } from "../../../../../shared/ui/LightBox";
 
 export function UserInfo() {
+  const { t } = useTranslation();
   const colors = useColors();
 
   return (
@@ -23,7 +25,7 @@ export function UserInfo() {
           *time icon*
           <Box>
             <Text fontSize="sm" color={colors.green}>
-              You are in the project:
+              {t("profile.userInfo.youInProject")}:
             </Text>
             <Text fontSize="lg">25 day 13 hours 17 minutes</Text>
           </Box>
@@ -33,7 +35,7 @@ export function UserInfo() {
           *icon*
           <Box>
             <Text fontSize="sm" color={colors.green}>
-              People on the project:
+              {t("profile.userInfo.peopleOnProject")}:
             </Text>
             <Text fontSize="lg">57.234</Text>
           </Box>
@@ -48,7 +50,7 @@ export function UserInfo() {
             whiteSpace="nowrap"
           >
             <Text w="fit-content" color={colors.green}>
-              Deposit status:
+              {t("profile.userInfo.depositStatus.title")}:
             </Text>
             <Box
               bg={colors.notActivated}
@@ -58,7 +60,7 @@ export function UserInfo() {
               px="8px"
               borderRadius="3xl"
             >
-              Not activated
+              {t("profile.userInfo.depositStatus.notActivated")}
             </Box>
           </Flex>
         </Flex>

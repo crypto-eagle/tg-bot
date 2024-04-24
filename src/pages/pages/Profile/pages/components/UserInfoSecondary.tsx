@@ -4,9 +4,11 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 // import { LuUser2 } from "react-icons/lu";
 // import { MdOutlineAccessTime } from "react-icons/md";
 import { useColors } from "@hooks/useColors";
+import { useTranslation } from "react-i18next";
 import { LightBox } from "../../../../../shared/ui/LightBox";
 
 export function UserInfoSecondary() {
+  const { t } = useTranslation();
   const colors = useColors();
 
   return (
@@ -28,7 +30,7 @@ export function UserInfoSecondary() {
             whiteSpace="nowrap"
           >
             <Text w="fit-content" color={colors.green}>
-              Deposit status:
+              {t("profile.userInfo.depositStatus.title")}:
             </Text>
             <Box
               bg={colors.notActivated}
@@ -38,13 +40,13 @@ export function UserInfoSecondary() {
               px="8px"
               borderRadius="3xl"
             >
-              Not activated
+              {t("profile.userInfo.depositStatus.notActivated")}
             </Box>
           </Flex>
         </Flex>
         <Flex gap="5px" mb="15px">
           <Text w="fit-content" color={colors.green}>
-            Turnover structure:
+            {t("profile.userInfo.turnoverStructure")}:
           </Text>
           <Text w="fit-content" fontSize="lg">
             {100.23}
@@ -53,7 +55,7 @@ export function UserInfoSecondary() {
         </Flex>
         <Flex gap="5px" mb="15px">
           <Text w="fit-content" color={colors.green}>
-            Income structure:
+            {t("profile.userInfo.incomeStructure")}:
           </Text>
           <Text w="fit-content" fontSize="lg" color={colors.darkgreen}>
             {200}
@@ -68,7 +70,7 @@ export function UserInfoSecondary() {
         </Flex>
         <Flex gap="5px">
           <Text w="fit-content" color={colors.green}>
-            Number of partners:
+            {t("profile.userInfo.numberOfPartners")}:
           </Text>
           <Text w="fit-content" fontSize="lg">
             {123}

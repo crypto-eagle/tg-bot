@@ -51,5 +51,19 @@
       "cancel": "Отменить",
       "contribute": "Вносить"
     }
+  },
+  "profile": {
+    "userInfo": {
+      "youInProject": "Вы в проекте",
+      "peopleOnProject": "Люди в проекте",
+      "depositStatus": {
+        "title": "Статус депозита",
+        "notActivated": "Не активирован",
+        "activated": "Активирован"
+      },
+      "turnoverStructure": "Структура оборота",
+      "incomeStructure": "Структура дохода",
+      "numberOfPartners": "Количество партнеров"
+    }
   }
 }
