@@ -14,15 +14,53 @@ export function UserInfo() {
       <Flex gap="15px" flexDirection="column">
         <Flex alignItems="center" gap="10px">
           {/* <LuUser2 /> */}*user icon*
-          <Text color="white">Username</Text>
+          <Text fontSize="lg" color="white">
+            Username
+          </Text>
         </Flex>
-        <Flex>
+        <Flex alignItems="center" gap="10px">
           {/* <MdOutlineAccessTime /> */}
           *time icon*
           <Box>
-            <Text color={colors.green}>You are in the project:</Text>
-            <Text>25 day 13 hours 17 minutes</Text>
+            <Text fontSize="sm" color={colors.green}>
+              You are in the project:
+            </Text>
+            <Text fontSize="lg">25 day 13 hours 17 minutes</Text>
           </Box>
+        </Flex>
+        <Flex alignItems="center" gap="10px">
+          {/* <MdOutlineAccessTime /> */}
+          *icon*
+          <Box>
+            <Text fontSize="sm" color={colors.green}>
+              People on the project:
+            </Text>
+            <Text fontSize="lg">57.234</Text>
+          </Box>
+        </Flex>
+        <Flex alignItems="center" gap="10px">
+          {/* <MdOutlineAccessTime /> */}
+          *icon*
+          <Flex
+            alignItems="center"
+            fontSize="sm"
+            gap="10px"
+            whiteSpace="nowrap"
+          >
+            <Text w="fit-content" color={colors.green}>
+              Deposit status:
+            </Text>
+            <Box
+              bg={colors.notActivated}
+              color="white"
+              fontWeight="normal"
+              py="3px"
+              px="8px"
+              borderRadius="3xl"
+            >
+              Not activated
+            </Box>
+          </Flex>
         </Flex>
       </Flex>
     </LightBox>
