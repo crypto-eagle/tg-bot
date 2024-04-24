@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useColors } from "@hooks/useColors";
 import { Buttons } from "./Buttons";
 
-export function ReplenishmentAmount() {
+export function AmountToWithdraw() {
   const { t } = useTranslation();
   const colors = useColors();
 

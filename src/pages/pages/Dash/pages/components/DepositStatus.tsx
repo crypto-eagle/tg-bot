@@ -3,20 +3,14 @@ import React from "react";
 import { Box, Flex, Progress, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { useColors } from "@hooks/useColors";
+import { LightBox } from "../../../../../shared/ui/LightBox";
 
 export function DepositStatus() {
   const { t } = useTranslation();
   const colors = useColors();
 
   return (
-    <Box
-      p="6"
-      w="100%"
-      fontWeight="bold"
-      borderRadius="20px"
-      bg="whiteAlpha.400"
-      border={`3px solid ${colors.turquoise}`}
-    >
+    <LightBox>
       <Flex justifyContent="space-between" alignItems="center" gap="10px">
         <Text>{t("dash.depositStatus.heading.header")}:</Text>
         <Box bg={colors.darkgreen} py="3px" px="20px" borderRadius="3xl">
@@ -51,6 +45,6 @@ export function DepositStatus() {
         <Text>10 {t("dash.depositStatus.percent")} 310 %</Text>
         <Progress value={10} borderRadius="xl" size="sm" mt="10px" />
       </Box>
-    </Box>
+    </LightBox>
   );
 }

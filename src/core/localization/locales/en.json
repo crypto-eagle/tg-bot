@@ -44,8 +44,9 @@
       "withdraw": "Withdraw",
       "rienvest": "Rienvest"
     },
-    "replenishmentAmount": {
-      "title": "indicate the replenishment amount",
+    "amount": {
+      "replenishmentAmount": "indicate the replenishment amount",
+      "amountToWithdraw": "Specify the amount to withdraw",
       "amount": "amount",
       "cancel": "Cancel",
       "contribute": "Contribute"

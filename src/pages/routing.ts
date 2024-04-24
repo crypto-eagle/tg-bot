@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { auth, dash } from "./pages";
+import { auth, dash, profile } from "./pages";
 
 export default createBrowserRouter([
   {
@@ -9,6 +9,16 @@ export default createBrowserRouter([
       {
         path: "",
         Component: auth.Welcome,
+      },
+    ],
+  },
+  {
+    path: "/profile",
+    Component: profile.Layout,
+    children: [
+      {
+        path: "",
+        Component: profile.Profile,
       },
     ],
   },

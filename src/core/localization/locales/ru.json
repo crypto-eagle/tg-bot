@@ -44,8 +44,9 @@
       "withdraw": "Вывести",
       "rienvest": "Инвестировать"
     },
-    "replenishmentAmount": {
-      "title": "указать сумму пополнения",
+    "amount": {
+      "replenishmentAmount": "указать сумму пополнения",
+      "amountToWithdraw": "Укажите сумму для снятия",
       "amount": "сумма",
       "cancel": "Отменить",
       "contribute": "Вносить"
