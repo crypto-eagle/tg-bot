@@ -6,6 +6,7 @@ import { IProfile } from "@core/models";
 
 import { Header } from "../../Dash/pages/components/Header";
 import { UserInfo } from "./components/UserInfo";
+import { Statistics } from "./components/Statistics";
 
 interface StateType {
   maxDeposit: string;
@@ -36,6 +37,7 @@ export default function Profile() {
     <>
       <Header />
       <UserInfo />
+      <Statistics />
       {state ? JSON.stringify(state) : "Loading.."}
     </>
   );
