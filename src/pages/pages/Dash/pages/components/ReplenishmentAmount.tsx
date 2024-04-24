@@ -17,9 +17,7 @@ export function ReplenishmentAmount() {
       borderRadius="lg"
       bg={colors.lightblack}
     >
-      <Text color="rgb(22, 240, 201)">
-        {t("dash.replenishmentAmount.title")}:
-      </Text>
+      <Text color={colors.green}>{t("dash.replenishmentAmount.title")}:</Text>
       <Input
         mt="30px"
         mb="32px"

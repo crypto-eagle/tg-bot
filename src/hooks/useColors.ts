@@ -11,5 +11,7 @@ export function useColors() {
     cyan: useColorModeValue("red.500", "cyan.400"),
     pink: useColorModeValue("green.500", "pink.400"),
     gray: useColorModeValue("blackAlpha.200", "whiteAlpha.400"),
+    green: useColorModeValue("rgb(22, 240, 201)", "rgb(22, 240, 201)"),
+    darkgreen: useColorModeValue("rgb(56, 161, 105)", "rgb(56, 161, 105)"),
   };
 }

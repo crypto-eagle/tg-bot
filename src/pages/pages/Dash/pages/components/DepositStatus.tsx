@@ -2,9 +2,11 @@ import React from "react";
 
 import { Box, Flex, Progress, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
+import { useColors } from "@hooks/useColors";
 
 export function DepositStatus() {
   const { t } = useTranslation();
+  const colors = useColors();
 
   return (
     <Box
@@ -17,13 +19,13 @@ export function DepositStatus() {
     >
       <Flex justifyContent="space-between" alignItems="center" gap="10px">
         <Text>{t("dash.depositStatus.heading.header")}:</Text>
-        <Box bg="rgb(56, 161, 105)" py="3px" px="20px" borderRadius="3xl">
+        <Box bg={colors.darkgreen} py="3px" px="20px" borderRadius="3xl">
           {t("dash.depositStatus.heading.content")}
         </Box>
       </Flex>
       <Flex my="20px" justifyContent="space-between" gap="20px">
         <Box>
-          <Text color="rgb(22, 240, 201)">
+          <Text color={colors.green}>
             {t("dash.depositStatus.content.earned")}:
           </Text>
           <Box textTransform="uppercase">
@@ -34,7 +36,7 @@ export function DepositStatus() {
           </Box>
         </Box>
         <Box>
-          <Text color="rgb(22, 240, 201)">
+          <Text color={colors.green}>
             {t("dash.depositStatus.content.invest")}:
           </Text>
           <Box textTransform="uppercase">

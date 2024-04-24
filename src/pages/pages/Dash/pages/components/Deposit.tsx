@@ -18,9 +18,7 @@ export function Deposit() {
     >
       <Text>{t("dash.deposit.title")}</Text>
       <Flex justifyContent="space-between" alignItems="center" my="20px">
-        <Text color="rgb(22, 240, 201)">
-          {t("dash.deposit.totalWithdraw")}:
-        </Text>
+        <Text color={colors.green}>{t("dash.deposit.totalWithdraw")}:</Text>
         <Box textTransform="uppercase">
           {/* Вот тут я не знаю как сделать 
               чтобы оно не переносилось */}
@@ -30,7 +28,7 @@ export function Deposit() {
       </Flex>
       <Flex justifyContent="space-between" alignItems="center" my="20px">
         <Text textTransform="uppercase">{t("dash.deposit.DEPOSIT")}:</Text>
-        <Box color="rgb(22, 240, 201)" textTransform="uppercase">
+        <Box color={colors.green} textTransform="uppercase">
           {/* Вот тут я не знаю как сделать 
               чтобы оно не переносилось */}
           <span style={{ fontSize: 32 }}>0.00 </span>

@@ -3,9 +3,11 @@ import React from "react";
 import { AddIcon } from "@chakra-ui/icons";
 import { Box, Flex, IconButton, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
+import { useColors } from "@hooks/useColors";
 
 export function Header() {
   const { t } = useTranslation();
+  const colors = useColors();
 
   return (
     <Flex
@@ -16,7 +18,7 @@ export function Header() {
       alignItems="center"
     >
       <Box>
-        <Text color="rgb(22, 240, 201)">{t("dash.header.title")}</Text>
+        <Text color={colors.green}>{t("dash.header.title")}</Text>
         <Box textTransform="uppercase">
           {/* Вот тут я не знаю как сделать 
               чтобы оно не переносилось */}
