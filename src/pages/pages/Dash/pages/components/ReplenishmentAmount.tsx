@@ -2,13 +2,21 @@ import React from "react";
 
 import { Box, Input, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
+import { useColors } from "@hooks/useColors";
 import { Buttons } from "./Buttons";
 
 export function ReplenishmentAmount() {
   const { t } = useTranslation();
+  const colors = useColors();
 
   return (
-    <Box w="100%" fontWeight="bold" p="6" borderRadius="lg" bg="#1A181B">
+    <Box
+      w="100%"
+      fontWeight="bold"
+      p="6"
+      borderRadius="lg"
+      bg={colors.lightblack}
+    >
       <Text color="rgb(22, 240, 201)">
         {t("dash.replenishmentAmount.title")}:
       </Text>

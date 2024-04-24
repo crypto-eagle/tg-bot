@@ -2,12 +2,20 @@ import React from "react";
 
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
+import { useColors } from "@hooks/useColors";
 
 export function Deposit() {
   const { t } = useTranslation();
+  const colors = useColors();
 
   return (
-    <Box w="100%" fontWeight="bold" p="6" borderRadius="lg" bg="#1A181B">
+    <Box
+      w="100%"
+      fontWeight="bold"
+      p="6"
+      borderRadius="lg"
+      bg={colors.lightblack}
+    >
       <Text>{t("dash.deposit.title")}</Text>
       <Flex justifyContent="space-between" alignItems="center" my="20px">
         <Text color="rgb(22, 240, 201)">

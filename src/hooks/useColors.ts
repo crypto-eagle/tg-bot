@@ -6,6 +6,7 @@ export function useColors() {
 
   return {
     black: useColorModeValue("whiteAlpha.900", "blackAlpha.900"),
+    lightblack: useColorModeValue("whiteAlpha.900", "#1A181B"),
     white: useColorModeValue("blackAlpha.900", "whiteAlpha.900"),
     cyan: useColorModeValue("red.500", "cyan.400"),
     pink: useColorModeValue("green.500", "pink.400"),
