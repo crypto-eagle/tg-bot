@@ -17,10 +17,6 @@ export function BlackBox({ children }: Props) {
       p="6"
       borderRadius="lg"
       bg={colors.lightblack}
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
     >
       {children}
     </Box>

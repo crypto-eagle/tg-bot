@@ -18,10 +18,6 @@ export function LightBox({ children }: Props) {
       borderRadius="20px"
       bg="whiteAlpha.400"
       border={`3px solid ${colors.turquoise}`}
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
     >
       {children}
     </Box>
