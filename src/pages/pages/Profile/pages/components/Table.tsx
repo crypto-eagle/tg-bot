@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Flex, Grid, GridItem } from "@chakra-ui/react";
+import { Button, Center, Flex, Grid, GridItem } from "@chakra-ui/react";
 import { useColors } from "@hooks/useColors";
 import { useTranslation } from "react-i18next";
 import { BlackBox } from "../../../../../shared/ui/BlackBox";
@@ -35,33 +35,74 @@ export function Table() {
         fontSize="sm"
         textAlign="center"
         autoRows="50px"
-        templateColumns="40px 84px 92px 83px"
+        templateColumns="40px minmax(84px, 1fr) minmax(92px, 1fr) minmax(83px, 1fr)"
       >
-        <GridItem lineHeight="3.2" border={`1px solid ${colors.turquoise}`}>
-          №
+        <GridItem
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          border={`1px solid ${colors.turquoise}`}
+        >
+          <Center>№</Center>
         </GridItem>
-        <GridItem border={`1px solid ${colors.turquoise}`}>
-          {t("profile.table.turnoverStructure")}
+        <GridItem
+          display="flex"
+          alignItems="center"
+          border={`1px solid ${colors.turquoise}`}
+          justifyContent="center"
+        >
+          <Center>{t("profile.table.turnoverStructure")}</Center>
         </GridItem>
-        <GridItem border={`1px solid ${colors.turquoise}`}>
-          {t("profile.table.numberOfPartners")}
+        <GridItem
+          display="flex"
+          alignItems="center"
+          border={`1px solid ${colors.turquoise}`}
+          justifyContent="center"
+        >
+          <Center>{t("profile.table.numberOfPartners")}</Center>
         </GridItem>
-        <GridItem fontSize="md" border={`1px solid ${colors.turquoise}`}>
-          {t("profile.table.interestRate")}
+        <GridItem
+          display="flex"
+          alignItems="center"
+          fontSize="md"
+          justifyContent="center"
+          border={`1px solid ${colors.turquoise}`}
+        >
+          <Center>{t("profile.table.interestRate")}</Center>
         </GridItem>
         {data.map((el) => (
           <>
-            <GridItem lineHeight="3.2" border={`1px solid ${colors.turquoise}`}>
-              {el.number}
+            <GridItem
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              border={`1px solid ${colors.turquoise}`}
+            >
+              <Center>{el.number}</Center>
             </GridItem>
-            <GridItem lineHeight="3.2" border={`1px solid ${colors.turquoise}`}>
-              {el.turnover_structure}
+            <GridItem
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              border={`1px solid ${colors.turquoise}`}
+            >
+              <Center>{el.turnover_structure}</Center>
             </GridItem>
-            <GridItem lineHeight="3.2" border={`1px solid ${colors.turquoise}`}>
-              {el.number_of_partners}
+            <GridItem
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              border={`1px solid ${colors.turquoise}`}
+            >
+              <Center>{el.number_of_partners}</Center>
             </GridItem>
-            <GridItem lineHeight="3.2" border={`1px solid ${colors.turquoise}`}>
-              {el.interest_rate}
+            <GridItem
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              border={`1px solid ${colors.turquoise}`}
+            >
+              <Center>{el.interest_rate}</Center>
             </GridItem>
           </>
         ))}
