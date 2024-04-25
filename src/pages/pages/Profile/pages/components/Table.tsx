@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Flex, Grid, GridItem } from "@chakra-ui/react";
 import { useColors } from "@hooks/useColors";
+import { useTranslation } from "react-i18next";
 import { BlackBox } from "../../../../../shared/ui/BlackBox";
 
 const data = [
@@ -25,6 +26,7 @@ const data = [
 ];
 
 export function Table() {
+  const { t } = useTranslation();
   const colors = useColors();
 
   return (
@@ -39,13 +41,13 @@ export function Table() {
           №
         </GridItem>
         <GridItem border={`1px solid ${colors.turquoise}`}>
-          Turnover structure
+          {t("profile.table.turnoverStructure")}
         </GridItem>
         <GridItem border={`1px solid ${colors.turquoise}`}>
-          Number of partners
+          {t("profile.table.numberOfPartners")}
         </GridItem>
         <GridItem fontSize="md" border={`1px solid ${colors.turquoise}`}>
-          Interest rate
+          {t("profile.table.interestRate")}
         </GridItem>
         {data.map((el) => (
           <>
@@ -72,7 +74,7 @@ export function Table() {
           px="30px"
           borderRadius="3xl"
         >
-          More
+          {t("profile.table.more")}
         </Button>
       </Flex>
     </BlackBox>

@@ -64,6 +64,12 @@
       "turnoverStructure": "Turnover structure",
       "incomeStructure": "Income structure",
       "numberOfPartners": "Number of partners"
+    },
+    "table": {
+      "turnoverStructure": "Turnover structure",
+      "numberOfPartners": "Number of partners",
+      "interestRate": "Interest rate",
+      "more": "More"
     }
   }
 }

@@ -64,6 +64,12 @@
       "turnoverStructure": "Структура оборота",
       "incomeStructure": "Структура дохода",
       "numberOfPartners": "Количество партнеров"
+    },
+    "table": {
+      "turnoverStructure": "Структура оборота",
+      "numberOfPartners": "Количество партнеров",
+      "interestRate": "Процентная ставка",
+      "more": "Больше"
     }
   }
 }
