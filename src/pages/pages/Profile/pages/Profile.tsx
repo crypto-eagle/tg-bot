@@ -9,6 +9,7 @@ import { UserInfo } from "./components/UserInfo";
 import { UserInfoSecondary } from "./components/UserInfoSecondary";
 import { Statistics } from "./components/Statistics";
 import { Consultation } from "./components/Consultation";
+import { Table } from "./components/Table";
 
 interface StateType {
   maxDeposit: string;
@@ -42,6 +43,7 @@ export default function Profile() {
       <UserInfoSecondary />
       <Statistics />
       <Consultation />
+      <Table />
       {state ? JSON.stringify(state) : "Loading.."}
     </>
   );
