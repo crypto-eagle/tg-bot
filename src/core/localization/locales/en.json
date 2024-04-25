@@ -44,11 +44,32 @@
       "withdraw": "Withdraw",
       "rienvest": "Rienvest"
     },
-    "replenishmentAmount": {
-      "title": "indicate the replenishment amount",
+    "amount": {
+      "replenishmentAmount": "indicate the replenishment amount",
+      "amountToWithdraw": "Specify the amount to withdraw",
       "amount": "amount",
       "cancel": "Cancel",
       "contribute": "Contribute"
+    }
+  },
+  "profile": {
+    "userInfo": {
+      "youInProject": "You are in the project",
+      "peopleOnProject": "People on the project",
+      "depositStatus": {
+        "title": "Deposit status",
+        "notActivated": "Not activated",
+        "activated": "Activated"
+      },
+      "turnoverStructure": "Turnover structure",
+      "incomeStructure": "Income structure",
+      "numberOfPartners": "Number of partners"
+    },
+    "table": {
+      "turnoverStructure": "Turnover structure",
+      "numberOfPartners": "Number of partners",
+      "interestRate": "Interest rate",
+      "more": "More"
     }
   }
 }

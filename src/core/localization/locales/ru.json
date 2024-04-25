@@ -44,11 +44,32 @@
       "withdraw": "Вывести",
       "rienvest": "Инвестировать"
     },
-    "replenishmentAmount": {
-      "title": "указать сумму пополнения",
+    "amount": {
+      "replenishmentAmount": "указать сумму пополнения",
+      "amountToWithdraw": "Укажите сумму для снятия",
       "amount": "сумма",
       "cancel": "Отменить",
       "contribute": "Вносить"
+    }
+  },
+  "profile": {
+    "userInfo": {
+      "youInProject": "Вы в проекте",
+      "peopleOnProject": "Люди в проекте",
+      "depositStatus": {
+        "title": "Статус депозита",
+        "notActivated": "Не активирован",
+        "activated": "Активирован"
+      },
+      "turnoverStructure": "Структура оборота",
+      "incomeStructure": "Структура дохода",
+      "numberOfPartners": "Количество партнеров"
+    },
+    "table": {
+      "turnoverStructure": "Структура оборота",
+      "numberOfPartners": "Количество партнеров",
+      "interestRate": "Процентная ставка",
+      "more": "Больше"
     }
   }
 }

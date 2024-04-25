@@ -3,19 +3,14 @@ import React from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { useColors } from "@hooks/useColors";
+import { BlackBox } from "../../../../../shared/ui/BlackBox";
 
 export function Deposit() {
   const { t } = useTranslation();
   const colors = useColors();
 
   return (
-    <Box
-      w="100%"
-      fontWeight="bold"
-      p="6"
-      borderRadius="lg"
-      bg={colors.lightblack}
-    >
+    <BlackBox>
       <Text>{t("dash.deposit.title")}</Text>
       <Flex justifyContent="space-between" alignItems="center" my="20px">
         <Text color={colors.green}>{t("dash.deposit.totalWithdraw")}:</Text>
@@ -35,6 +30,6 @@ export function Deposit() {
           ton
         </Box>
       </Flex>
-    </Box>
+    </BlackBox>
   );
 }

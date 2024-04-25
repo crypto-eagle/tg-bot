@@ -1,15 +1,15 @@
-import "./Dash.scss";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import React, { useContext, useEffect, useState } from "react";
 
 import { SmartContractContext } from "@core/providers/smart-contract.provider";
 import { IProfile } from "@core/models";
 
-import { Header } from "./components/Header";
-import { Deposit } from "./components/Deposit";
-import { Buttons } from "./components/Buttons";
-import { DepositStatus } from "./components/DepositStatus";
-import { Amount } from "./components/Amount";
+import { Header } from "../../Dash/pages/components/Header";
+import { UserInfo } from "./components/UserInfo";
+import { UserInfoSecondary } from "./components/UserInfoSecondary";
+import { Statistics } from "./components/Statistics";
+import { Consultation } from "./components/Consultation";
+import { Table } from "./components/Table";
 
 interface StateType {
   maxDeposit: string;
@@ -17,8 +17,8 @@ interface StateType {
   profile: IProfile | null;
 }
 
-export default function Dash() {
-  const { t } = useTranslation();
+export default function Profile() {
+  // const { t } = useTranslation();
   const api = useContext(SmartContractContext);
   const [state, setState] = useState<StateType | undefined>();
 
@@ -39,16 +39,11 @@ export default function Dash() {
   return (
     <>
       <Header />
-      <DepositStatus />
-      <Amount title={t("dash.amount.replenishmentAmount")} />
-      <Amount title={t("dash.amount.amountToWithdraw")} />
-      <Deposit />
-      <Buttons
-        buttonsContent={[
-          t("dash.buttons.withdraw"),
-          t("dash.buttons.rienvest"),
-        ]}
-      />
+      <UserInfo />
+      <UserInfoSecondary />
+      <Statistics />
+      <Consultation />
+      <Table />
       {state ? JSON.stringify(state) : "Loading.."}
     </>
   );
