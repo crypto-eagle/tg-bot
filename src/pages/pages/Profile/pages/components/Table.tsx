@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Button, Flex, Grid, GridItem } from "@chakra-ui/react";
 import { useColors } from "@hooks/useColors";
 import { BlackBox } from "../../../../../shared/ui/BlackBox";
 
@@ -64,6 +64,17 @@ export function Table() {
           </>
         ))}
       </Grid>
+      <Flex justifyContent="center" mt="30px">
+        <Button
+          color="white"
+          colorScheme="blue"
+          py="20px"
+          px="30px"
+          borderRadius="3xl"
+        >
+          More
+        </Button>
+      </Flex>
     </BlackBox>
   );
 }
