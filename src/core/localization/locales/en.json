@@ -38,14 +38,22 @@
     "deposit": {
       "title": "Available for withdraw",
       "totalWithdraw": "Total withdraw",
-      "DEPOSIT": "DEPOSIT"
+      "DEPOSIT": "DEPOSIT",
+      "toastFailed": {
+        "title": "Deposit failed",
+        "description": "Something went wrong. Please try again later"
+      },
+      "toastSucceed": {
+        "title": "Deposit succeed",
+        "description": "Wait for transaction confirmation"
+      }
     },
     "buttons": {
       "withdraw": "Withdraw",
       "rienvest": "Rienvest"
     },
     "amount": {
-      "replenishmentAmount": "indicate the replenishment amount",
+      "replenishmentAmount": "Indicate the replenishment amount",
       "amountToWithdraw": "Specify the amount to withdraw",
       "amount": "amount",
       "cancel": "Cancel",
@@ -71,5 +79,10 @@
       "interestRate": "Interest rate",
       "more": "More"
     }
+  },
+  "validation": {
+    "min": "Min amount is {{min}} TON",
+    "max": "Max amount is {{max}} TON",
+    "required": "Required field"
   }
 }

@@ -20,7 +20,7 @@ i18next
       },
     },
     interpolation: {
-      escapeValue: false,
+      escapeValue: true,
     },
   })
   .then();

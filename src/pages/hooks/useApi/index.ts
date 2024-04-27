@@ -29,8 +29,8 @@ export function useApi(): IApiResult | undefined {
         profile: () => getProfile(contract, address),
       },
       methods: {
-        deposit: (amount: bigint, upLine: Address) =>
-          contract ? deposit(contract, sender, amount, upLine) : null,
+        deposit: (amount: bigint, upLine: Address | null) =>
+          deposit(contract, sender, amount, upLine),
       },
     });
   }, [contract, wallet, sender]);

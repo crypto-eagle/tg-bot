@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { SmartContractContext } from "@core/providers/smart-contract.provider";
 import { IProfile } from "@core/models";
 
-import { Header } from "../../Dash/pages/components/Header";
+import { Header } from "../../Dash/components/Header";
 import { UserInfo } from "./components/UserInfo";
 import { UserInfoSecondary } from "./components/UserInfoSecondary";
 import { Statistics } from "./components/Statistics";

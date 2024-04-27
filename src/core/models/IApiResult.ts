@@ -4,12 +4,12 @@ import { Address } from "ton-core";
 export interface IApiResult {
   address: string;
   getters: {
-    maxDeposit: () => Promise<string>;
-    minDeposit: () => Promise<string>;
+    maxDeposit: () => Promise<number>;
+    minDeposit: () => Promise<number>;
     profile: () => Promise<IProfile | null>;
   };
   methods: {
     // eslint-disable-next-line no-unused-vars
-    deposit: (amount: bigint, upLine: Address) => void;
+    deposit: (amount: bigint, upLine: Address | null) => Promise<void>;
   };
 }

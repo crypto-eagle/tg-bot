@@ -38,18 +38,26 @@
     "deposit": {
       "title": "Доступно для вывода",
       "totalWithdraw": "Всего снято",
-      "DEPOSIT": "ДЕПОЗИТ"
+      "DEPOSIT": "ДЕПОЗИТ",
+      "toastFailed": {
+        "title": "Депозит не удался",
+        "description": "Что то пошло не так. Пожалуйста попробуйте позже"
+      },
+      "toastSucceed": {
+        "title": "Депозит успешен",
+        "description": "Подождите подтверждения транзакции"
+      }
     },
     "buttons": {
       "withdraw": "Вывести",
       "rienvest": "Инвестировать"
     },
     "amount": {
-      "replenishmentAmount": "указать сумму пополнения",
+      "replenishmentAmount": "Укажите сумму пополнения",
       "amountToWithdraw": "Укажите сумму для снятия",
       "amount": "сумма",
       "cancel": "Отменить",
-      "contribute": "Вносить"
+      "contribute": "Внести"
     }
   },
   "profile": {
@@ -71,5 +79,10 @@
       "interestRate": "Процентная ставка",
       "more": "Больше"
     }
+  },
+  "validation": {
+    "min": "Минимальное значение {{min}} TON",
+    "max": "Максимальное значение {{max}} TON",
+    "required": "Обязательное поле"
   }
 }

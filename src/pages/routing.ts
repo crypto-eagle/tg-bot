@@ -28,7 +28,17 @@ export default createBrowserRouter([
     children: [
       {
         path: "",
-        Component: dash.Dash,
+        Component: dash.DashLayout,
+        children: [
+          {
+            path: "",
+            Component: dash.Stats,
+          },
+          {
+            path: "/deposit",
+            Component: dash.Deposit,
+          },
+        ],
       },
     ],
   },
