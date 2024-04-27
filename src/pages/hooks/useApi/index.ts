@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import { Address } from "ton-core";
 import { TonConnectContext } from "@core/providers/ton-connect.provider";
 import { IApiResult } from "@core/models/IApiResult";
+import { Address } from "@ton/core";
 import { useSmartContract } from "./useSmartContract";
 import { getMinDeposit } from "./functions/getMinDeposit";
 import { getMaxDeposit } from "./functions/getMaxDeposit";

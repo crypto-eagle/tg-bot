@@ -1,4 +1,4 @@
-import { Address, OpenedContract } from "ton-core";
+import { Address, OpenedContract } from "@ton/core";
 import { EarnContract } from "@core/contracts/tact_EarnContract";
 import { useAsyncInitialize } from "@hooks/useAsyncInitialize";
 import { useTonClient } from "../useTonClient";

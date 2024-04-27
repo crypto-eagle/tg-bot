@@ -1,5 +1,5 @@
 import { IProfile } from "@core/models/IProfile";
-import { Address } from "ton-core";
+import { Address } from "@ton/core";
 
 export interface IApiResult {
   address: string;

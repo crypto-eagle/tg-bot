@@ -1,4 +1,4 @@
-import { Address, OpenedContract, Sender } from "ton-core";
+import { Address, OpenedContract, Sender } from "@ton/core";
 import { EarnContract } from "@core/contracts/tact_EarnContract";
 
 export async function deposit(

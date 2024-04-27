@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { SmartContractContext } from "@core/providers/smart-contract.provider";
-import { toNano } from "ton-core";
+import { toNano } from "@ton/core";
 import { Skeleton, Stack, useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { ConfirmForm } from "../components/ConfirmForm";
