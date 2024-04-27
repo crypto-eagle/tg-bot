@@ -1,7 +1,6 @@
 import React from "react";
 import { useColors } from "@hooks/useColors";
 import { Box, Stack } from "@chakra-ui/react";
-import { DebugBar } from "@core/components/DebugBar";
 
 export function AppLayout(props: { children: React.ReactNode }) {
   const colors = useColors();
@@ -32,7 +31,7 @@ export function AppLayout(props: { children: React.ReactNode }) {
         {children}
       </Stack>
 
-      <DebugBar />
+      {/* <DebugBar /> */}
     </>
   );
 }

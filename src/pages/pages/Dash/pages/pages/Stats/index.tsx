@@ -1,42 +1,64 @@
 import { useTranslation } from "react-i18next";
+import { Button, Flex, Text } from "@chakra-ui/react";
+import React, { useContext } from "react";
 import { useColors } from "@hooks/useColors";
-import { Box, Flex, Text } from "@chakra-ui/react";
-import React from "react";
+import { useNavigate } from "react-router-dom";
+import { SmartContractContext } from "@core/providers/smart-contract.provider";
 import { BlackBox } from "../../../../../../shared/ui/BlackBox";
-import { Buttons } from "../../components/Buttons";
+import { TonValue } from "../../../controls/TonValue";
 
 export function Stats() {
   const { t } = useTranslation();
   const colors = useColors();
+  const navigate = useNavigate();
+
+  const { profile } = useContext(SmartContractContext);
 
   return (
-    <BlackBox>
-      <Text>{t("dash.deposit.title")}</Text>
-      <Flex justifyContent="space-between" alignItems="center" my="20px">
-        <Text color={colors.green}>{t("dash.deposit.totalWithdraw")}:</Text>
-        <Box textTransform="uppercase">
-          {/* Вот тут я не знаю как сделать 
-              чтобы оно не переносилось */}
-          <span style={{ fontSize: 32 }}>0.00 </span>
-          ton
-        </Box>
-      </Flex>
-      <Flex justifyContent="space-between" alignItems="center" my="20px">
-        <Text textTransform="uppercase">{t("dash.deposit.DEPOSIT")}:</Text>
-        <Box color={colors.green} textTransform="uppercase">
-          {/* Вот тут я не знаю как сделать 
-              чтобы оно не переносилось */}
-          <span style={{ fontSize: 32 }}>0.00 </span>
-          ton
-        </Box>
-      </Flex>
+    <>
+      <BlackBox>
+        <Text mb={4}>{t("dash.status.title")}</Text>
 
-      <Buttons
-        buttonsContent={[
-          t("dash.buttons.withdraw"),
-          t("dash.buttons.rienvest"),
-        ]}
-      />
-    </BlackBox>
+        <TonValue
+          rowView
+          title="dash.status.totalDeposit"
+          value={profile?.totalDeposit || null}
+        />
+
+        <TonValue
+          rowView
+          title="dash.status.totalWithdraw"
+          value={profile?.totalClaimedRewards || null}
+        />
+
+        <TonValue
+          rowView
+          title="dash.status.totalReferralBonus"
+          value={profile?.totalReferralBonus || null}
+        />
+      </BlackBox>
+      <Flex justifyContent="space-evenly" w="100%" p={3}>
+        <Button
+          color="white"
+          w="40%"
+          bg={colors.blue}
+          borderRadius="3xl"
+          onClick={() => navigate("withdraw")}
+        >
+          {t("dash.status.buttons.withdraw")}
+        </Button>
+
+        <Button
+          type="submit"
+          color="white"
+          w="40%"
+          bg={colors.darkgreen}
+          borderRadius="3xl"
+          onClick={() => navigate("deposit")}
+        >
+          {t("dash.status.buttons.reinvest")}
+        </Button>
+      </Flex>
+    </>
   );
 }

@@ -12,7 +12,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useColors } from "@hooks/useColors";
 import { useNavigate } from "react-router-dom";
-import { BlackBox } from "../../../../../../shared/ui/BlackBox";
+import { BlackBox } from "../../../../../../../shared/ui/BlackBox";
 
 interface ConfirmFormProps {
   title: string;

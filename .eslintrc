@@ -37,6 +37,15 @@
     ],
     "no-console": [
       "off"
+    ],
+    "react/require-default-props": [
+      "off"
+    ],
+    "no-debugger": [
+      "off"
+    ],
+    "consistent-return": [
+      "off"
     ]
   }
 }

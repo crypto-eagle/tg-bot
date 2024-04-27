@@ -1,12 +1,12 @@
 export interface IProfile {
-    totalDeposit: string;
-    totalClaimedRewards: string;
-    totalReferralBonus: string;
-    depositIsAvailable: boolean;
-    currentRound: number;
-    currentRoundDurationInDays: number;
-    currentDeposit: string;
-    currentClaimedRewards: string;
-    currentClaimableRewards: string;
-    currentMaxRewards: string;
+  totalDeposit: number;
+  totalClaimedRewards: number;
+  totalReferralBonus: number;
+  depositIsAvailable: boolean;
+  currentRound: number;
+  currentRoundDurationInDays: number;
+  currentDeposit: number;
+  currentClaimedRewards: number;
+  currentClaimableRewards: number;
+  currentMaxRewards: number;
 }

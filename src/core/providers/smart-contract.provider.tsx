@@ -1,8 +1,16 @@
 import React, { createContext } from "react";
 import { IApiResult } from "@core/models/IApiResult";
+import { IProfile } from "@core/models";
 import { useApi } from "../../pages/hooks/useApi";
 
-export const SmartContractContext = createContext<IApiResult>({} as IApiResult);
+export interface ISmartContractData {
+  state?: IApiResult;
+  profile: IProfile | null;
+}
+
+export const SmartContractContext = createContext<ISmartContractData>(
+  {} as ISmartContractData,
+);
 
 export function SmartContractProvider(props: { children: React.ReactNode }) {
   const api = useApi();

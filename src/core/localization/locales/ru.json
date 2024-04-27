@@ -35,10 +35,17 @@
       },
       "percent": "из"
     },
+    "status": {
+      "title": "Суммарная статистика",
+      "totalDeposit": "Депозит",
+      "totalWithdraw": "Выводы",
+      "totalReferralBonus": "Реферальный бонус",
+      "buttons": {
+        "withdraw": "Вывести",
+        "reinvest": "Инвестировать"
+      }
+    },
     "deposit": {
-      "title": "Доступно для вывода",
-      "totalWithdraw": "Всего снято",
-      "DEPOSIT": "ДЕПОЗИТ",
       "toastFailed": {
         "title": "Депозит не удался",
         "description": "Что то пошло не так. Пожалуйста попробуйте позже"

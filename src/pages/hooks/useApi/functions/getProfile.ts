@@ -10,16 +10,18 @@ export async function getProfile(
 
   return profile
     ? {
-        totalDeposit: fromNano(profile.totalDeposit),
-        totalClaimedRewards: fromNano(profile.totalClaimedRewards),
-        totalReferralBonus: fromNano(profile.totalReferralBonus),
+        totalDeposit: Number(fromNano(profile.totalDeposit)),
+        totalClaimedRewards: Number(fromNano(profile.totalClaimedRewards)),
+        totalReferralBonus: Number(fromNano(profile.totalReferralBonus)),
         depositIsAvailable: profile.depositIsAvailable,
         currentRound: Number(profile.currentRound),
         currentRoundDurationInDays: Number(profile.currentRoundDurationInDays),
-        currentDeposit: fromNano(profile.currentDeposit),
-        currentClaimedRewards: fromNano(profile.currentClaimedRewards),
-        currentClaimableRewards: fromNano(profile.currentClaimableRewards),
-        currentMaxRewards: fromNano(profile.currentMaxRewards),
+        currentDeposit: Number(fromNano(profile.currentDeposit)),
+        currentClaimedRewards: Number(fromNano(profile.currentClaimedRewards)),
+        currentClaimableRewards: Number(
+          fromNano(profile.currentClaimableRewards),
+        ),
+        currentMaxRewards: Number(fromNano(profile.currentMaxRewards)),
       }
     : null;
 }

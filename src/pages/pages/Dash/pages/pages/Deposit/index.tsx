@@ -5,7 +5,7 @@ import { SmartContractContext } from "@core/providers/smart-contract.provider";
 import { toNano } from "@ton/core";
 import { Skeleton, Stack, useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { ConfirmForm } from "../components/ConfirmForm";
+import { ConfirmForm } from "./components/ConfirmForm";
 import { BlackBox } from "../../../../../../shared/ui/BlackBox";
 
 interface MinMaxState {

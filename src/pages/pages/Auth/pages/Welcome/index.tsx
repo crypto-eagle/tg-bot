@@ -6,6 +6,7 @@ import { useSwiperState } from "@hooks/useSwiperState";
 import WelcomeSwiper from "./components/WelcomeSwiper";
 import WelcomeSlides from "./components/WelcomeSlides";
 import NextButton from "./components/NextButton";
+import { LangChooser } from "../../../../components/LangChooser";
 
 export default function Welcome() {
   const { state, setSwiper } = useSwiperState();
@@ -30,6 +31,8 @@ export default function Welcome() {
         next={state?.next}
         first={state?.first}
       />
+
+      <LangChooser />
     </VStack>
   );
 }

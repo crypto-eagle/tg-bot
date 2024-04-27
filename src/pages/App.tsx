@@ -6,7 +6,6 @@ import React from "react";
 import { Stack } from "@chakra-ui/react";
 import { TonConnectProvider } from "@core/providers/ton-connect.provider";
 import routing from "./routing";
-import { LangChooser } from "./components/LangChooser";
 import { Header } from "./components/Header";
 import { AppLayout } from "./components/AppLayout";
 
@@ -25,8 +24,6 @@ export default function App() {
         <TonConnectProvider>
           <RouterProvider router={routing} />
         </TonConnectProvider>
-
-        <LangChooser />
       </Stack>
     </AppLayout>
   );

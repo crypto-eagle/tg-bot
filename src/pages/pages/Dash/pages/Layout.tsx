@@ -1,30 +1,16 @@
 import React from "react";
 
 import { Outlet } from "react-router-dom";
+import { Box } from "@chakra-ui/react";
 import { DepositStatus } from "./components/DepositStatus";
 
 export function DashLayout() {
-  // const { t } = useTranslation();
-  // const api = useContext(SmartContractContext);
-  // const [state, setState] = useState<StateType | undefined>();
-  //
-  // useEffect(() => {
-  //   if (!api) {
-  //     return;
-  //   }
-  //
-  //   (async () => {
-  //     setState({
-  //       minDeposit: await api.getters.minDeposit(),
-  //       maxDeposit: await api.getters.maxDeposit(),
-  //       profile: await api.getters.profile(),
-  //     });
-  //   })();
-  // }, [api]);
-
   return (
     <>
-      <DepositStatus />
+      <Box w="100%" mt="3" mb="3">
+        <DepositStatus />
+      </Box>
+
       <Outlet />
     </>
   );
