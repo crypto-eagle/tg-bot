@@ -31,7 +31,7 @@ export function Deposit() {
   const toast = useToast();
   const navigate = useNavigate();
 
-  const api = useContext(SmartContractContext);
+  const { api } = useContext(SmartContractContext);
   const [constraints, setConstraints] = useState<MinMaxState | undefined>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -52,6 +52,10 @@ export function Deposit() {
 
   const confirmFormCallback = useCallback(
     async (amount: number) => {
+      if (!api) {
+        return;
+      }
+
       try {
         setIsLoading(true);
 
@@ -76,7 +80,7 @@ export function Deposit() {
         setIsLoading(false);
       }
     },
-    [api.methods, navigate, t, toast],
+    [api, navigate, t, toast],
   );
 
   if (!constraints) {

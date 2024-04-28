@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import { useColors } from "@hooks/useColors";
 import { useNavigate } from "react-router-dom";
 import { SmartContractContext } from "@core/providers/smart-contract.provider";
+import { Loader } from "@core/components/Loader";
 import { BlackBox } from "../../../../../../shared/ui/BlackBox";
 import { TonValue } from "../../../controls/TonValue";
 
@@ -13,6 +14,14 @@ export function Stats() {
   const navigate = useNavigate();
 
   const { profile } = useContext(SmartContractContext);
+
+  if (profile === undefined) {
+    return (
+      <BlackBox>
+        <Loader rows={3} />
+      </BlackBox>
+    );
+  }
 
   return (
     <>
@@ -48,16 +57,17 @@ export function Stats() {
           {t("dash.status.buttons.withdraw")}
         </Button>
 
-        <Button
-          type="submit"
-          color="white"
-          w="40%"
-          bg={colors.darkgreen}
-          borderRadius="3xl"
-          onClick={() => navigate("deposit")}
-        >
-          {t("dash.status.buttons.reinvest")}
-        </Button>
+        {(!profile || profile?.depositIsAvailable) && (
+          <Button
+            color="white"
+            w="40%"
+            bg={colors.darkgreen}
+            borderRadius="3xl"
+            onClick={() => navigate("deposit")}
+          >
+            {t("dash.status.buttons.reinvest")}
+          </Button>
+        )}
       </Flex>
     </>
   );

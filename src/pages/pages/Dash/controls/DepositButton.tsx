@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 export function DepositButton() {
   const colors = useColors();
-  // const { open } = useContext(ConfirmDialogContext);
   const navigate = useNavigate();
 
   return (

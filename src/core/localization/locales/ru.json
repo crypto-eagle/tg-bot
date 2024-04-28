@@ -25,14 +25,14 @@
       "title": "Инвестировано в проект"
     },
     "depositStatus": {
-      "heading": {
-        "header": "Статус депозита",
-        "content": "Активный"
+      "title": "Статус депозита",
+      "status": {
+        "active": "Активен",
+        "inactive": "Не активен",
+        "workedOut": "Отработан"
       },
-      "content": {
-        "earned": "Заработанно",
-        "invest": "Инвестировано"
-      },
+      "earned": "Заработанно",
+      "invested": "Инвестировано",
       "percent": "из"
     },
     "status": {

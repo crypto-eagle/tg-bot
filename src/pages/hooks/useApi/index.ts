@@ -15,7 +15,7 @@ export function useApi(): ISmartContractData {
   const contract = useSmartContract();
 
   const [state, setState] = useState<IApiResult>();
-  const [profile, setProfile] = useState<IProfile | null>(null);
+  const [profile, setProfile] = useState<IProfile | null>();
 
   useEffect(() => {
     if (!contract || !wallet) {
@@ -51,5 +51,5 @@ export function useApi(): ISmartContractData {
     return () => clearInterval(interval);
   }, [contract, wallet, sender]);
 
-  return { state, profile };
+  return { api: state, profile };
 }

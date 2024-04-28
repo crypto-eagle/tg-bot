@@ -4,8 +4,8 @@ import { IProfile } from "@core/models";
 import { useApi } from "../../pages/hooks/useApi";
 
 export interface ISmartContractData {
-  state?: IApiResult;
-  profile: IProfile | null;
+  api?: IApiResult;
+  profile?: IProfile | null;
 }
 
 export const SmartContractContext = createContext<ISmartContractData>(

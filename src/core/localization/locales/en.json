@@ -25,14 +25,14 @@
       "title": "Invested in project"
     },
     "depositStatus": {
-      "heading": {
-        "header": "Deposit status",
-        "content": "Active"
+      "title": "Deposit status",
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive",
+        "workedOut": "Worked out"
       },
-      "content": {
-        "earned": "Earned",
-        "invest": "Invest"
-      },
+      "earned": "Earned",
+      "invested": "Invested",
       "percent": "of"
     },
     "status": {
