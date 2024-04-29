@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { useColors } from "@hooks/useColors";
 // import { ReactComponent as StatusIcon } from "../assets/status.svg";
-import { BlackBox } from "../../../../../shared/ui/BlackBox";
+import { BlackBox } from "../../../../../../shared/ui/BlackBox";
 
 export function Statistics() {
   const colors = useColors();

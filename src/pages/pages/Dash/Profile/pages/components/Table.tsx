@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Center, Flex, Grid, GridItem } from "@chakra-ui/react";
 import { useColors } from "@hooks/useColors";
 import { useTranslation } from "react-i18next";
-import { BlackBox } from "../../../../../shared/ui/BlackBox";
+import { BlackBox } from "../../../../../../shared/ui/BlackBox";
 
 const data = [
   {
