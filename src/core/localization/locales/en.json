@@ -39,13 +39,11 @@
       "title": "Total status",
       "totalDeposit": "Deposit",
       "totalWithdraw": "Withdraw",
-      "totalReferralBonus": "Referral bonus",
-      "buttons": {
-        "withdraw": "Withdraw",
-        "reinvest": "Reinvest"
-      }
+      "totalReferralBonus": "Referral bonus"
     },
     "deposit": {
+      "title": "Indicate the replenishment amount",
+      "amount": "amount",
       "toastFailed": {
         "title": "Deposit failed",
         "description": "Something went wrong. Please try again later"
@@ -55,10 +53,22 @@
         "description": "Wait for transaction confirmation"
       }
     },
-    "amount": {
-      "replenishmentAmount": "Indicate the replenishment amount",
-      "amountToWithdraw": "Specify the amount to withdraw",
-      "amount": "amount",
+    "withdraw": {
+      "title": "Withdraw current amount",
+      "subTitle": "Make sure you have enough balance",
+      "claimableAmount": "Claimable amount",
+      "toastFailed": {
+        "title": "Withdraw failed",
+        "description": "Something went wrong. Please try again later"
+      },
+      "toastSucceed": {
+        "title": "Withdraw succeed",
+        "description": "Wait for transaction confirmation"
+      }
+    },
+    "buttons": {
+      "withdraw": "Withdraw",
+      "reinvest": "Reinvest",
       "cancel": "Cancel",
       "contribute": "Contribute"
     }

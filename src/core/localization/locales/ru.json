@@ -39,13 +39,11 @@
       "title": "Суммарная статистика",
       "totalDeposit": "Депозит",
       "totalWithdraw": "Выводы",
-      "totalReferralBonus": "Реферальный бонус",
-      "buttons": {
-        "withdraw": "Вывести",
-        "reinvest": "Инвестировать"
-      }
+      "totalReferralBonus": "Реферальный бонус"
     },
     "deposit": {
+      "title": "Укажите сумму пополнения",
+      "amount": "сумма",
       "toastFailed": {
         "title": "Депозит не удался",
         "description": "Что то пошло не так. Пожалуйста попробуйте позже"
@@ -55,14 +53,22 @@
         "description": "Подождите подтверждения транзакции"
       }
     },
+    "withdraw": {
+      "title": "Вывод текущей суммы",
+      "subTitle": "Убедитесь в наличии достаточных средств",
+      "claimableAmount": "Доступная сумма",
+      "toastFailed": {
+        "title": "Вывод не удался",
+        "description": "Что то пошло не так. Пожалуйста, попробуйте позже"
+      },
+      "toastSucceed": {
+        "title": "Вывод успешен",
+        "description": "Подождите подтверждения транзакции"
+      }
+    },
     "buttons": {
       "withdraw": "Вывести",
-      "rienvest": "Инвестировать"
-    },
-    "amount": {
-      "replenishmentAmount": "Укажите сумму пополнения",
-      "amountToWithdraw": "Укажите сумму для снятия",
-      "amount": "сумма",
+      "rienvest": "Инвестировать",
       "cancel": "Отменить",
       "contribute": "Внести"
     }

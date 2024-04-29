@@ -3,27 +3,14 @@ import * as Yup from "yup";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { SmartContractContext } from "@core/providers/smart-contract.provider";
 import { toNano } from "@ton/core";
-import { Skeleton, Stack, useToast } from "@chakra-ui/react";
+import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { Loader } from "@core/components/Loader";
 import { ConfirmForm } from "./components/ConfirmForm";
-import { BlackBox } from "../../../../../../shared/ui/BlackBox";
 
 interface MinMaxState {
   min: number;
   max: number;
-}
-
-function Loader() {
-  return (
-    <BlackBox>
-      <Stack>
-        <Skeleton h={8} />
-        <Skeleton h={8} />
-        <Skeleton h={8} />
-        <Skeleton h={8} />
-      </Stack>
-    </BlackBox>
-  );
 }
 
 export function Deposit() {
@@ -59,12 +46,13 @@ export function Deposit() {
       try {
         setIsLoading(true);
 
+        // TODO: FIX UPLINE
         await api.methods.deposit(toNano(amount), null);
         toast({
           title: t("dash.deposit.toastSucceed.title"),
           description: t("dash.deposit.toastSucceed.description"),
           status: "success",
-          duration: 9000,
+          duration: 5000,
           isClosable: true,
         });
         navigate("../");
@@ -73,7 +61,7 @@ export function Deposit() {
           title: t("dash.deposit.toastFailed.title"),
           description: t("dash.deposit.toastFailed.description"),
           status: "error",
-          duration: 9000,
+          duration: 5000,
           isClosable: true,
         });
       } finally {
@@ -84,7 +72,7 @@ export function Deposit() {
   );
 
   if (!constraints) {
-    return <Loader />;
+    return <Loader rows={4} />;
   }
 
   const { min, max } = constraints;
@@ -97,10 +85,10 @@ export function Deposit() {
   });
 
   return isLoading ? (
-    <Loader />
+    <Loader rows={4} />
   ) : (
     <ConfirmForm
-      title="dash.amount.replenishmentAmount"
+      title="dash.deposit.title"
       validationSchema={validationScheme}
       callback={confirmFormCallback}
     />

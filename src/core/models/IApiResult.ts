@@ -9,5 +9,6 @@ export interface IApiResult {
   methods: {
     // eslint-disable-next-line no-unused-vars
     deposit: (amount: bigint, upLine: Address | null) => Promise<void>;
+    withdraw: () => Promise<void>;
   };
 }

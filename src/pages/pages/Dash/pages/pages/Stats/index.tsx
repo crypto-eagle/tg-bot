@@ -47,15 +47,17 @@ export function Stats() {
         />
       </BlackBox>
       <Flex justifyContent="space-evenly" w="100%" p={3}>
-        <Button
-          color="white"
-          w="40%"
-          bg={colors.blue}
-          borderRadius="3xl"
-          onClick={() => navigate("withdraw")}
-        >
-          {t("dash.status.buttons.withdraw")}
-        </Button>
+        {profile && (
+          <Button
+            color="white"
+            w="40%"
+            bg={colors.blue}
+            borderRadius="3xl"
+            onClick={() => navigate("withdraw")}
+          >
+            {t("dash.buttons.withdraw")}
+          </Button>
+        )}
 
         {(!profile || profile?.depositIsAvailable) && (
           <Button
@@ -65,7 +67,7 @@ export function Stats() {
             borderRadius="3xl"
             onClick={() => navigate("deposit")}
           >
-            {t("dash.status.buttons.reinvest")}
+            {t("dash.buttons.reinvest")}
           </Button>
         )}
       </Flex>

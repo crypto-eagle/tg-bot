@@ -38,6 +38,10 @@ export default createBrowserRouter([
             path: "/deposit",
             Component: dash.Deposit,
           },
+          {
+            path: "/withdraw",
+            Component: dash.Withdraw,
+          },
         ],
       },
     ],

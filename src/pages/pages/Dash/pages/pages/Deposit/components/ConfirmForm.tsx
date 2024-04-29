@@ -53,7 +53,7 @@ export function ConfirmForm(props: ConfirmFormProps) {
                       borderStyle="solid"
                       borderColor={colors.turquoise}
                       focusBorderColor={colors.turquoise}
-                      placeholder={t("dash.amount.amount")}
+                      placeholder={t("dash.deposit.amount")}
                     />
                     <FormErrorMessage>{meta.error}</FormErrorMessage>
                   </FormControl>
@@ -69,7 +69,7 @@ export function ConfirmForm(props: ConfirmFormProps) {
                 borderRadius="3xl"
                 onClick={() => navigate("../")}
               >
-                {t("dash.amount.cancel")}
+                {t("dash.buttons.cancel")}
               </Button>
 
               <Button
@@ -79,7 +79,7 @@ export function ConfirmForm(props: ConfirmFormProps) {
                 bg={colors.darkgreen}
                 borderRadius="3xl"
               >
-                {t("dash.amount.contribute")}
+                {t("dash.buttons.contribute")}
               </Button>
             </Flex>
           </Form>

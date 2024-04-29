@@ -9,6 +9,7 @@ import { getMinDeposit } from "./functions/getMinDeposit";
 import { getMaxDeposit } from "./functions/getMaxDeposit";
 import { getProfile } from "./functions/getProfile";
 import { deposit } from "./functions/deposit";
+import { withdraw } from "./functions/withdraw";
 
 export function useApi(): ISmartContractData {
   const { wallet, sender } = useContext(TonConnectContext);
@@ -31,8 +32,9 @@ export function useApi(): ISmartContractData {
         maxDeposit: () => getMaxDeposit(contract, address),
       },
       methods: {
-        deposit: (amount: bigint, upLine: Address | null) =>
+        deposit: async (amount: bigint, upLine: Address | null) =>
           deposit(contract, sender, amount, upLine),
+        withdraw: () => withdraw(contract, sender),
       },
     });
 
