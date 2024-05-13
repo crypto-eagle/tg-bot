@@ -28,10 +28,7 @@ export function Deposit() {
     }
 
     (async () => {
-      setConstraints({
-        min: await api.getters.minDeposit(),
-        max: await api.getters.maxDeposit(),
-      });
+      setConstraints(await api.getters.depositConstraints());
 
       setIsLoading(false);
     })();

@@ -56,7 +56,7 @@ export function Withdraw() {
     <Loader rows={3} />
   ) : (
     <BlackBox>
-      <Heading color={colors.green} as="h3">
+      <Heading color={colors.green} as="h4" size="md">
         {t("dash.withdraw.title")}
       </Heading>
       <Text color={colors.gray}>{t("dash.withdraw.subTitle")}:</Text>
@@ -64,7 +64,9 @@ export function Withdraw() {
       <TonValue
         title="dash.withdraw.claimableAmount"
         rowView
-        value={profile.currentClaimableRewards || null}
+        value={
+          profile.current.earnedAmount - profile.current.claimedAmount || null
+        }
       />
 
       <Flex justifyContent="space-evenly" mt={4}>

@@ -1,10 +1,10 @@
 import { Address } from "@ton/core";
+import { DepositConstraintsState } from "../../pages/hooks/useApi/functions/getDepositConstraints";
 
 export interface IApiResult {
   address: string;
   getters: {
-    maxDeposit: () => Promise<number>;
-    minDeposit: () => Promise<number>;
+    depositConstraints: () => Promise<DepositConstraintsState>;
   };
   methods: {
     // eslint-disable-next-line no-unused-vars

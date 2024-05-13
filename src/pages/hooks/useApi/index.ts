@@ -5,8 +5,7 @@ import { Address } from "@ton/core";
 import { IProfile } from "@core/models";
 import { ISmartContractData } from "@core/providers/smart-contract.provider";
 import { useSmartContract } from "./useSmartContract";
-import { getMinDeposit } from "./functions/getMinDeposit";
-import { getMaxDeposit } from "./functions/getMaxDeposit";
+import { getDepositConstraints } from "./functions/getDepositConstraints";
 import { getProfile } from "./functions/getProfile";
 import { deposit } from "./functions/deposit";
 import { withdraw } from "./functions/withdraw";
@@ -28,8 +27,7 @@ export function useApi(): ISmartContractData {
     setState({
       address: wallet.toString(),
       getters: {
-        minDeposit: () => getMinDeposit(contract, address),
-        maxDeposit: () => getMaxDeposit(contract, address),
+        depositConstraints: () => getDepositConstraints(contract, address),
       },
       methods: {
         deposit: async (amount: bigint, upLine: Address | null) =>

@@ -76,6 +76,11 @@
   "profile": {
     "userInfo": {
       "youInProject": "Вы в проекте",
+      "time": {
+        "day": "дней",
+        "hours": "часов",
+        "minutes": "минут"
+      },
       "peopleOnProject": "Люди в проекте",
       "depositStatus": {
         "title": "Статус депозита",

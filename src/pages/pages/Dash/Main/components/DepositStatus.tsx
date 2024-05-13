@@ -13,7 +13,7 @@ type depositStatus = "active" | "inactive" | "workedOut";
 interface DepositStatusState {
   status: depositStatus;
   claimableRewards: number;
-  deposit?: number;
+  deposit: number;
   percent: number;
 }
 
@@ -28,33 +28,17 @@ export function DepositStatus() {
 
     if (!profile) {
       status = "inactive";
-    } else if (profile.depositIsAvailable) {
+    } else if (profile.canDeposit) {
       status = "workedOut";
     } else {
       status = "active";
     }
 
-    let percent: number;
-    if (!profile) {
-      percent = 0;
-    } else {
-      const earned =
-        profile.currentClaimableRewards + profile.currentClaimedRewards;
-      const percent100 = profile.currentDeposit * 3.1;
-
-      percent = (100 * earned) / percent100;
-      percent = Math.ceil(percent);
-
-      if (percent > 100) {
-        percent = 100;
-      }
-    }
-
     setState({
       status,
-      claimableRewards: profile?.currentClaimableRewards || 0,
-      deposit: profile?.currentDeposit,
-      percent,
+      claimableRewards: profile?.current.earnedAmount || 0,
+      deposit: profile?.current.deposit || 0,
+      percent: profile?.current.earnedPercent || 0,
     });
   }, [profile]);
 

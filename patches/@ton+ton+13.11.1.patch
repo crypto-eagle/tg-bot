@@ -1,0 +1,13 @@
+diff --git a/node_modules/@ton/ton/dist/client/TonClient.js b/node_modules/@ton/ton/dist/client/TonClient.js
+index 4969e73..c04770c 100644
+--- a/node_modules/@ton/ton/dist/client/TonClient.js
++++ b/node_modules/@ton/ton/dist/client/TonClient.js
+@@ -277,6 +277,8 @@ function parseStackEntry(s) {
+             return { type: 'cell', cell: core_1.Cell.fromBase64(s.cell) };
+         case 'tvm.stackEntryTuple':
+             return { type: 'tuple', items: s.tuple.elements.map(parseStackEntry) };
++        case "tvm.stackEntrySlice":
++            return { type: "slice", cell: core_1.Cell.fromBoc(Buffer.from(s.slice.bytes, "base64"))[0] };
+         default:
+             throw Error("Unsupported item type: " + s["@type"]);
+     }

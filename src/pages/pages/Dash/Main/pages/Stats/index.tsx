@@ -31,19 +31,19 @@ export function Stats() {
         <TonValue
           rowView
           title="dash.status.totalDeposit"
-          value={profile?.totalDeposit || null}
+          value={profile?.total.deposit || null}
         />
 
         <TonValue
           rowView
           title="dash.status.totalWithdraw"
-          value={profile?.totalClaimedRewards || null}
+          value={profile?.total.claimed || null}
         />
 
         <TonValue
           rowView
           title="dash.status.totalReferralBonus"
-          value={profile?.totalReferralBonus || null}
+          value={profile?.total.referalBonus || null}
         />
       </BlackBox>
       <Flex justifyContent="space-evenly" w="100%" p={3}>
@@ -59,7 +59,7 @@ export function Stats() {
           </Button>
         )}
 
-        {(!profile || profile?.depositIsAvailable) && (
+        {(!profile || profile?.canDeposit) && (
           <Button
             color="white"
             w="40%"
