@@ -32,15 +32,9 @@ export default createBrowserRouter([
             path: "/withdraw",
             Component: dash.Withdraw,
           },
-        ],
-      },
-      {
-        path: "/profile",
-        Component: dash.ProfileLayout,
-        children: [
           {
-            path: "",
-            Component: dash.Profile,
+            path: "/profile",
+            Component: dash.ProfileStatus,
           },
         ],
       },

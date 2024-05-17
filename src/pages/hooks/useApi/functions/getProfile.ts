@@ -4,19 +4,16 @@ import { IProfile, TimePast } from "@core/models/IProfile";
 
 const asNum = (val: bigint): number => Number(fromNano(val));
 const secondsToDhms = (secondsBig: bigint): TimePast => {
-  const seconds = Number(secondsBig);
-  console.log("secondsBig", secondsBig, seconds);
+  const seconds = secondsBig;
 
-  const days = Math.floor(seconds / (3600 * 24));
-  const hours = Math.floor((seconds % (3600 * 24)) / 3600);
-  const mins = Math.floor((seconds % 3600) / 60);
-  const secs = Math.floor(seconds % 60);
+  const days = seconds / (3600n * 24n);
+  const hours = seconds % (3600n * 24n) / 3600n;
+  const mins = seconds % 3600n / 60n;
 
   return {
-    days,
-    hours,
-    mins,
-    secs,
+    days: Number(days),
+    hours: Number(hours),
+    mins: Number(mins)
   };
 };
 

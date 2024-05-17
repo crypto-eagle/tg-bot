@@ -3,7 +3,6 @@ import { Address } from "@ton/core";
 export interface TimePast {
   hours: number;
   mins: number;
-  secs: number;
   days: number;
 }
 

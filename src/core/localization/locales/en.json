@@ -71,16 +71,34 @@
       "reinvest": "Reinvest",
       "cancel": "Cancel",
       "contribute": "Contribute"
+    },
+    "nav": {
+      "info": "Project Info / Instructions",
+      "profile": "Project Info / Settings",
+      "referral": "Referrals / Structure",
+      "dash": "Dashboard"
     }
   },
   "profile": {
+    "title": "Total status",
+    "youInProject": "You are in the project",
+    "time": {
+      "day": "day",
+      "hours": "hours",
+      "minutes": "minutes"
+    },
+    "status-title": "Your status",
+    "status": {
+      "plankton": "plankton",
+      "shrimp": "shrimp",
+      "crucian-carp": "crucian carp",
+      "pike": "pike",
+      "som": "som",
+      "whale": "whale"
+    },
+    "your-upline": "Your Upline",
+    "your-ref-link": "Your Referral Link",
     "userInfo": {
-      "youInProject": "You are in the project",
-      "time": {
-        "day": "day",
-        "hours": "hours",
-        "minutes": "minutes"
-      },
       "peopleOnProject": "People on the project",
       "depositStatus": {
         "title": "Deposit status",

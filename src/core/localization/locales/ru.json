@@ -71,16 +71,34 @@
       "rienvest": "Инвестировать",
       "cancel": "Отменить",
       "contribute": "Внести"
+    },
+    "nav": {
+      "info": "О проекте / Инструкция",
+      "profile": "Профиль / Настройки",
+      "referral": "Рефералы / Структура",
+      "dash": "Панель управления"
     }
   },
   "profile": {
+    "title": "Суммарная статистика",
+    "youInProject": "Вы в проекте",
+    "time": {
+      "day": "дней",
+      "hours": "часов",
+      "minutes": "минут"
+    },
+    "status-title": "Ваш статус",
+    "status": {
+      "plankton": "планктон",
+      "shrimp": "креветка",
+      "crucian-carp": "карась",
+      "pike": "щука",
+      "som": "сом",
+      "whale": "кит"
+    },
+    "your-upline": "Ваш Upline",
+    "your-ref-link": "Ваша реф. ссылка",
     "userInfo": {
-      "youInProject": "Вы в проекте",
-      "time": {
-        "day": "дней",
-        "hours": "часов",
-        "minutes": "минут"
-      },
       "peopleOnProject": "Люди в проекте",
       "depositStatus": {
         "title": "Статус депозита",
