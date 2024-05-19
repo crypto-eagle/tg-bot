@@ -36,6 +36,10 @@ export default createBrowserRouter([
             path: "/profile",
             Component: dash.ProfileStatus,
           },
+          {
+            path: "/referral",
+            Component: dash.Referral,
+          },
         ],
       },
     ],

@@ -67,7 +67,7 @@ const navItems = {
       label="Referral"
       text="dash.nav.referral"
       key="3"
-      link="/profile"
+      link="/referral"
       icon={<CheckCircleIcon />}
     />
   ),
@@ -76,6 +76,7 @@ const navItems = {
 const pathNavs = new Map([
   ["/", [navItems.info, navItems.profile, navItems.referral]],
   ["/profile", [navItems.dash, navItems.profile, navItems.referral]],
+  ["/referral", [navItems.dash, navItems.info, navItems.profile]],
 ]);
 
 export function Nav() {
