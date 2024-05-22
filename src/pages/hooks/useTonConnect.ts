@@ -17,7 +17,7 @@ export function useTonConnect(): ITonConnect {
               payload: args.body?.toBoc().toString("base64"),
             },
           ],
-          validUntil: Date.now() + 5 * 60 * 1000, // 5 minutes for user to approve
+          validUntil: Date.now() + 60 * 1000, // 1 minute for user to approve
         });
       },
     },
