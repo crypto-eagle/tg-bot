@@ -23,10 +23,10 @@ export function Header() {
     >
       <TonValue
         title="dash.header.title"
-        value={profile?.current.deposit || null}
+        value={profile?.current?.deposit || null}
       />
 
-      {(!profile || profile?.canDeposit) && <DepositButton />}
+      <div>{(!profile || profile?.canDeposit) && <DepositButton />}</div>
     </Flex>
   );
 }

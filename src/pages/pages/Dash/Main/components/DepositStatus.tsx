@@ -36,9 +36,9 @@ export function DepositStatus() {
 
     setState({
       status,
-      claimableRewards: profile?.current.earnedAmount || 0,
-      deposit: profile?.current.deposit || 0,
-      percent: profile?.current.earnedPercent || 0,
+      claimableRewards: profile?.current?.earnedAmount || 0,
+      deposit: profile?.current?.deposit || 0,
+      percent: profile?.current?.earnedPercent || 0,
     });
   }, [profile]);
 

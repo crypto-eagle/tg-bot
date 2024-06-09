@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { auth, dash } from "./pages";
+import { TestPage } from "./pages/Dash/Main/pages/Test";
+import { DaysBack } from "./pages/Dash/Main/pages/Test/pages/DaysBack";
 
 export default createBrowserRouter([
   {
@@ -39,6 +41,16 @@ export default createBrowserRouter([
           {
             path: "/referral",
             Component: dash.Referral,
+          },
+          {
+            path: "/test",
+            Component: TestPage,
+            children: [
+              {
+                path: "days-back",
+                Component: DaysBack,
+              },
+            ],
           },
         ],
       },

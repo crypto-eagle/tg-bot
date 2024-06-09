@@ -7,13 +7,13 @@ const secondsToDhms = (secondsBig: bigint): TimePast => {
   const seconds = secondsBig;
 
   const days = seconds / (3600n * 24n);
-  const hours = seconds % (3600n * 24n) / 3600n;
-  const mins = seconds % 3600n / 60n;
+  const hours = (seconds % (3600n * 24n)) / 3600n;
+  const mins = (seconds % 3600n) / 60n;
 
   return {
     days: Number(days),
     hours: Number(hours),
-    mins: Number(mins)
+    mins: Number(mins),
   };
 };
 
@@ -26,20 +26,22 @@ export async function getProfile(
   return profile
     ? {
         canDeposit: profile.canDeposit,
-        refAddress: profile.refAddress.asSlice().loadAddress(),
-        upLine: profile.upLine.asSlice().loadAddress(),
+        refAddress: profile.refAddress,
+        upLine: profile.upLine,
         total: {
           deposit: asNum(profile.total.deposit),
           claimed: asNum(profile.total.claimed),
           referalBonus: asNum(profile.total.referalBonus),
         },
-        current: {
-          deposit: asNum(profile.current.deposit),
-          claimedAmount: asNum(profile.current.claimedAmount),
-          earnedAmount: asNum(profile.current.earnedAmount),
-          earnedPercent: asNum(profile.current.earnedPercent),
-          timePast: secondsToDhms(profile.current.secondsPast),
-        },
+        current: profile.current
+          ? {
+              deposit: asNum(profile.current.deposit),
+              claimedAmount: asNum(profile.current.claimedAmount),
+              earnedAmount: asNum(profile.current.earnedAmount),
+              earnedPercent: Number(profile.current.earnedPercent),
+              timePast: secondsToDhms(profile.current.secondsPast),
+            }
+          : null,
       }
     : null;
 }

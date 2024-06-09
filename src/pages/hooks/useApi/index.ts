@@ -5,10 +5,13 @@ import { Address } from "@ton/core";
 import { IProfile } from "@core/models";
 import { ISmartContractData } from "@core/providers/smart-contract.provider";
 import { useSmartContract } from "./useSmartContract";
-import { getDepositConstraints } from "./functions/getDepositConstraints";
-import { getProfile } from "./functions/getProfile";
-import { deposit } from "./functions/deposit";
-import { withdraw } from "./functions/withdraw";
+import {
+  deposit,
+  getDepositConstraints,
+  getProfile,
+  setDaysBack,
+  withdraw,
+} from "./functions";
 
 export function useApi(): ISmartContractData {
   const { wallet, sender } = useContext(TonConnectContext);
@@ -30,7 +33,8 @@ export function useApi(): ISmartContractData {
         depositConstraints: () => getDepositConstraints(contract, address),
       },
       methods: {
-        deposit: async (amount: bigint, upLine: Address | null) =>
+        setDaysBack: (count: bigint) => setDaysBack(contract, sender, count),
+        deposit: (amount: bigint, upLine: Address | null) =>
           deposit(contract, sender, amount, upLine),
         withdraw: () => withdraw(contract, sender),
       },
