@@ -25,5 +25,5 @@ export interface IProfile {
   refAddress: Address;
   upLine: Address;
   total: ProfileTotals;
-  current: ProfileCurrentRound;
+  current: ProfileCurrentRound | null;
 }

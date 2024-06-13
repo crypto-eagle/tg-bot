@@ -7,7 +7,8 @@ export interface IApiResult {
     depositConstraints: () => Promise<DepositConstraintsState>;
   };
   methods: {
-    // eslint-disable-next-line no-unused-vars
+    /* eslint-disable no-unused-vars */
+    setDaysBack: (count: bigint) => Promise<void>;
     deposit: (amount: bigint, upLine: Address | null) => Promise<void>;
     withdraw: () => Promise<void>;
   };
