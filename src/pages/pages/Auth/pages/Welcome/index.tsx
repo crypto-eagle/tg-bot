@@ -1,7 +1,7 @@
 import "./index.scss";
 
 import React from "react";
-import { Box, HStack, VStack } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 import { useSwiperState } from "@hooks/useSwiperState";
 import WelcomeSwiper from "./components/WelcomeSwiper";
 import WelcomeSlides from "./components/WelcomeSlides";
@@ -21,9 +21,9 @@ export default function Welcome() {
       <Box w="full">
         <WelcomeSwiper setSwiper={setSwiper} />
       </Box>
-      <HStack>
+      <Box>
         <WelcomeSlides slides={state?.slides} index={state?.index} />
-      </HStack>
+      </Box>
 
       <NextButton
         w="200px"

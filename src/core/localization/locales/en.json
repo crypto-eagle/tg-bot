@@ -70,7 +70,8 @@
       "withdraw": "Withdraw",
       "reinvest": "Reinvest",
       "cancel": "Cancel",
-      "contribute": "Contribute"
+      "contribute": "Contribute",
+      "consultation": "Consultation"
     },
     "nav": {
       "info": "Project Info / Instructions",
@@ -82,6 +83,7 @@
   "profile": {
     "title": "Total status",
     "youInProject": "You are in the project",
+    "peopleInProject": "People in the project",
     "time": {
       "day": "day",
       "hours": "hours",
@@ -89,15 +91,20 @@
     },
     "status-title": "Your status",
     "status": {
-      "plankton": "plankton",
-      "shrimp": "shrimp",
-      "crucian-carp": "crucian carp",
-      "pike": "pike",
-      "som": "som",
-      "whale": "whale"
+      "plankton": "Plankton",
+      "shrimp": "Shrimp",
+      "crucian": "Crucian carp",
+      "pike": "Pike",
+      "catfish": "Catfish",
+      "whale": "Whale"
     },
-    "your-upline": "Your Upline:",
+    "your-upline": "Your Upline",
     "your-ref-link": "Your Referral Link",
+    "ref-link": "Referral Link",
+    "toast": {
+      "copySucceed": "Copy to clipboard successfully.",
+      "copyError": "Can't access the clipboard. Check your browser permissions."
+    },
     "userInfo": {
       "peopleOnProject": "People on the project",
       "depositStatus": {

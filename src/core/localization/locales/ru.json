@@ -70,7 +70,8 @@
       "withdraw": "Вывести",
       "rienvest": "Инвестировать",
       "cancel": "Отменить",
-      "contribute": "Внести"
+      "contribute": "Внести",
+      "consultation": "Консультация"
     },
     "nav": {
       "info": "О проекте / Инструкция",
@@ -82,6 +83,7 @@
   "profile": {
     "title": "Суммарная статистика",
     "youInProject": "Вы в проекте",
+    "peopleInProject": "Людей в проекте",
     "time": {
       "day": "дней",
       "hours": "часов",
@@ -89,15 +91,20 @@
     },
     "status-title": "Ваш статус",
     "status": {
-      "plankton": "планктон",
-      "shrimp": "креветка",
-      "crucian-carp": "карась",
-      "pike": "щука",
-      "som": "сом",
-      "whale": "кит"
+      "plankton": "Планктон",
+      "shrimp": "Креветка",
+      "crucian": "Карась",
+      "pike": "Щука",
+      "catfish": "Сом",
+      "whale": "Кит"
     },
-    "your-upline": "Ваш Upline:",
+    "your-upline": "Ваш Upline",
     "your-ref-link": "Ваша реф. ссылка",
+    "ref-link": "Реф. ссылка",
+    "toast": {
+      "copySucceed": "Копирование в буфер обмена успешно.",
+      "copyError": "Не удалось получить доступ к буферу обмена. Проверьте разрешения вашего браузера."
+    },
     "userInfo": {
       "peopleOnProject": "Люди в проекте",
       "depositStatus": {

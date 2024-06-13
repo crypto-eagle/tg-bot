@@ -87,7 +87,7 @@ export function Withdraw() {
           borderRadius="3xl"
           onClick={() => confirmFormCallback()}
         >
-          {t("dash.buttons.contribute")}
+          {t("dash.buttons.withdraw")}
         </Button>
       </Flex>
     </BlackBox>

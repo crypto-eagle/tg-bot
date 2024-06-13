@@ -1,7 +1,7 @@
 /* eslint-disable react/require-default-props, react/no-array-index-key */
 import React from "react";
 
-import { Box } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 import { useColors } from "@hooks/useColors";
 
 interface WelcomeSlidesProps {
@@ -15,7 +15,7 @@ export default function WelcomeSlides(props: WelcomeSlidesProps) {
   const { slides } = props;
 
   return (
-    <div>
+    <HStack>
       {slides?.map((_, i) => (
         <Box
           bg={props?.index === i ? colors.cyan : colors.gray}
@@ -25,6 +25,6 @@ export default function WelcomeSlides(props: WelcomeSlidesProps) {
           key={i}
         />
       ))}
-    </div>
+    </HStack>
   );
 }

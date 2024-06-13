@@ -16,5 +16,8 @@ export function useColors() {
     blue: useColorModeValue("#0098EA", "#0098EA"),
     turquoise: useColorModeValue("rgb(9, 221, 250)", "rgb(9, 221, 250)"),
     notActivated: useColorModeValue("#F56565", "#F56565"),
+    lightred: useColorModeValue("#FC8181", "#FC8181"),
+    lightorange: useColorModeValue("#F6AD55", "#F6AD55"),
+    orange: useColorModeValue("#ED8936", "#ED8936")
   };
 }

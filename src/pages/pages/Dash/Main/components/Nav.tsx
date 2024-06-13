@@ -1,4 +1,4 @@
-import { Flex, HStack, IconButton, Text } from "@chakra-ui/react";
+import { Flex, IconButton, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 import {
   CheckCircleIcon,
   InfoIcon,
@@ -19,18 +19,27 @@ function NavItem(props: {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { label, text, icon, link } = props;
+  const isSmallScreen = useBreakpointValue({ base: true, md: false });
 
   const redirect = useCallback(() => {
     navigate(link);
   }, [navigate, link]);
 
   return (
-    <HStack spacing={2} cursor="pointer" onClick={redirect}>
-      <IconButton aria-label={label} icon={icon} />
+    <Stack
+        spacing={2}
+        cursor="pointer"
+        onClick={redirect}
+        direction={isSmallScreen ? 'column' : 'row'}
+        alignSelf="start"
+        alignItems="center"
+        textAlign="center"
+    >
+      <IconButton aria-label={label} icon={icon}/>
       <Text fontSize="sm" _hover={{ borderBottom: "1px solid" }}>
         {t(text)}
       </Text>
-    </HStack>
+    </Stack>
   );
 }
 
@@ -48,7 +57,7 @@ const navItems = {
     <NavItem
       label="Info"
       text="dash.nav.info"
-      key="1"
+      key="2"
       link="/profile"
       icon={<InfoIcon />}
     />
@@ -57,7 +66,7 @@ const navItems = {
     <NavItem
       label="Profile"
       text="dash.nav.profile"
-      key="2"
+      key="3"
       link="/profile"
       icon={<SettingsIcon />}
     />
@@ -66,7 +75,7 @@ const navItems = {
     <NavItem
       label="Referral"
       text="dash.nav.referral"
-      key="3"
+      key="4"
       link="/referral"
       icon={<CheckCircleIcon />}
     />
@@ -75,6 +84,8 @@ const navItems = {
 
 const pathNavs = new Map([
   ["/", [navItems.info, navItems.profile, navItems.referral]],
+  ["/deposit", [navItems.info, navItems.profile, navItems.referral]],
+  ["/withdraw", [navItems.info, navItems.profile, navItems.referral]],
   ["/profile", [navItems.dash, navItems.profile, navItems.referral]],
   ["/referral", [navItems.dash, navItems.info, navItems.profile]],
 ]);

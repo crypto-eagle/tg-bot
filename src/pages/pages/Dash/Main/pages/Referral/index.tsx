@@ -1,10 +1,10 @@
 import React from "react";
-import { Table } from "../../../Profile/pages/components/Table";
+import {StructureTable} from "../../../Profile/pages/components/StructureTable";
 
 export function Referral() {
   return (
     <div>
-      <Table />
+      <StructureTable />
     </div>
   );
 }
