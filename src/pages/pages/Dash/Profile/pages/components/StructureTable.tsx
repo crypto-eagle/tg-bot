@@ -43,13 +43,67 @@ const tableData = [
     number: 5,
     turnover_structure: 33,
     number_of_partners: 123,
-    interest_rate: "8%",
+    interest_rate: "10%",
   },
   {
     number: 6,
     turnover_structure: 38,
     number_of_partners: 123,
     interest_rate: "8%",
+  },
+  {
+    number: 7,
+    turnover_structure: 38,
+    number_of_partners: 123,
+    interest_rate: "8%",
+  },
+  {
+    number: 8,
+    turnover_structure: 38,
+    number_of_partners: 123,
+    interest_rate: "8%",
+  },
+  {
+    number: 9,
+    turnover_structure: 38,
+    number_of_partners: 123,
+    interest_rate: "8%",
+  },
+  {
+    number: 10,
+    turnover_structure: 38,
+    number_of_partners: 123,
+    interest_rate: "8%",
+  },
+  {
+    number: 11,
+    turnover_structure: 38,
+    number_of_partners: 123,
+    interest_rate: "5%",
+  },
+  {
+    number: 12,
+    turnover_structure: 38,
+    number_of_partners: 123,
+    interest_rate: "5%",
+  },
+  {
+    number: 13,
+    turnover_structure: 38,
+    number_of_partners: 123,
+    interest_rate: "5%",
+  },
+  {
+    number: 14,
+    turnover_structure: 38,
+    number_of_partners: 123,
+    interest_rate: "5%",
+  },
+  {
+    number: 15,
+    turnover_structure: 38,
+    number_of_partners: 123,
+    interest_rate: "5%",
   }
 ];
 
@@ -78,17 +132,17 @@ export function StructureTable() {
           <Thead>
             <Tr>
               <TableCell>#</TableCell>
-              <TableCell>{t("profile.table.turnoverStructure")}</TableCell>
-              <TableCell>{t("profile.table.numberOfPartners")}</TableCell>
+              { /* <TableCell>{t("profile.table.turnoverStructure")}</TableCell> */ }
+              { /* <TableCell>{t("profile.table.numberOfPartners")}</TableCell> */ }
               <TableCell>{t("profile.table.interestRate")}</TableCell>
             </Tr>
           </Thead>
           <Tbody>
             {data.map((el) => (
               <Tr key={el.number}>
-                <TableCell>{el.number}</TableCell>
-                <TableCell>{el.turnover_structure}</TableCell>
-                <TableCell>{el.number_of_partners}</TableCell>
+                <TableCell>{el.number} {t("profile.table.generation")}</TableCell>
+                { /* <TableCell>{el.turnover_structure}</TableCell> */ }
+                { /* <TableCell>{el.number_of_partners}</TableCell> */ }
                 <TableCell>{el.interest_rate}</TableCell>
               </Tr>
             ))}

@@ -120,7 +120,8 @@
       "turnoverStructure": "Turnover structure",
       "numberOfPartners": "Number of partners",
       "interestRate": "Interest rate",
-      "more": "More"
+      "more": "More",
+      "generation": "generation"
     }
   },
   "validation": {

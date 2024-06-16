@@ -33,7 +33,7 @@ function UserInfoItem(props:UserInfoItemProps) {
 }
 
 export interface UserInfoProps {
-  timePast: TimePast;
+  timePast?: TimePast;
 
   peopleInProject: number;
 
@@ -49,7 +49,7 @@ export function UserInfoSecondary(props: UserInfoProps) {
       <Flex gap="15px" flexDirection="column">
         <UserInfoItem title={t("profile.youInProject")} icon={<TimeIcon width="24px" height="24px" />}>
           <Text fontSize="lg">
-            {`${timePast.days} ${t("profile.time.day")} ${timePast.hours} ${t("profile.time.hours")} ${timePast.mins} ${t("profile.time.minutes")}`}
+            {`${timePast?.days ?? 0} ${t("profile.time.day")} ${timePast?.hours ?? 0} ${t("profile.time.hours")} ${timePast?.mins ?? 0} ${t("profile.time.minutes")}`}
           </Text>
         </UserInfoItem>
 

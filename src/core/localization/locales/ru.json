@@ -120,7 +120,8 @@
       "turnoverStructure": "Структура оборота",
       "numberOfPartners": "Количество партнеров",
       "interestRate": "Процентная ставка",
-      "more": "Больше"
+      "more": "Больше",
+      "generation": "поколение"
     }
   },
   "validation": {

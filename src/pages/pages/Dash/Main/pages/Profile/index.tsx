@@ -4,6 +4,7 @@ import { Loader } from "@core/components/Loader";
 import { BlackBox } from "../../../../../../shared/ui/BlackBox";
 import { Consultation } from "./components/Consultation";
 import { UserInfoSecondary } from "./components/UserInfoSecondary";
+import {getStatusByDeposit} from "./functions/depositRules";
 
 export function ProfileStatus() {
   const { profile } = useContext(SmartContractContext);
@@ -16,11 +17,13 @@ export function ProfileStatus() {
     );
   }
 
-  const uplineAddress = `${profile.upLine.toString().slice(0, 4)  }…${  profile.upLine.toString().slice(-4)}` 
+  const uplineAddress = `${profile.upLine.toString().slice(0, 4)  }…${  profile.upLine.toString().slice(-4)}`;
+  const userStatus = getStatusByDeposit(profile.current?.deposit ?? 0);
+  const botLink = import.meta.env.VITE_BOT_LINK;
   return (
     <>
-      <UserInfoSecondary timePast={profile.current.timePast} userStatus="whale" peopleInProject={546}/>
-      <Consultation userName={uplineAddress} referralLink={`https://example.com/${profile.refAddress.toString()}`}/>
+      <UserInfoSecondary timePast={profile.current?.timePast} userStatus={userStatus} peopleInProject={546}/>
+      <Consultation userName={uplineAddress} referralLink={`${botLink}${profile.refAddress.toString()}`}/>
     </>
   );
 }
