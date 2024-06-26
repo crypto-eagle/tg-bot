@@ -3,8 +3,7 @@ import "./Layout.scss";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import React, { useContext, useEffect } from "react";
 import { TonConnectContext } from "@core/providers/ton-connect.provider";
-
-const returnUrlLen = "?returnUrl=".length;
+import { ReferralAddressProvider } from "@core/providers/referral-address.provider";
 
 export default function Layout() {
   const { connected } = useContext(TonConnectContext);
@@ -14,11 +13,17 @@ export default function Layout() {
   useEffect(() => {
     if (connected) {
       const { search } = location;
-      const url = search ? search.slice(returnUrlLen) : "/";
+      const params = new URLSearchParams(search);
+      const returnUrl = params.get("returnUrl");
+      const url = returnUrl || "/";
 
       navigate(url);
     }
   }, [navigate, connected, location]);
 
-  return !connected ? <Outlet /> : "";
+  return !connected ? (
+      <ReferralAddressProvider>
+        <Outlet />
+      </ReferralAddressProvider>
+  ) : "";
 }

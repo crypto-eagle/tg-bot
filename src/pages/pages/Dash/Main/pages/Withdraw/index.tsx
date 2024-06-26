@@ -65,7 +65,7 @@ export function Withdraw() {
         title="dash.withdraw.claimableAmount"
         rowView
         value={
-          profile.current.earnedAmount - profile.current.claimedAmount || null
+            (profile.current?.earnedAmount ?? 0) - (profile.current?.claimedAmount ?? 0)
         }
       />
 

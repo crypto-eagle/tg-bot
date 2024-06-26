@@ -6,6 +6,7 @@ import { toNano } from "@ton/core";
 import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { Loader } from "@core/components/Loader";
+import { ReferralAddressContext } from "@core/providers/referral-address.provider";
 import { ConfirmForm } from "./components/ConfirmForm";
 
 interface MinMaxState {
@@ -21,6 +22,7 @@ export function Deposit() {
   const { api } = useContext(SmartContractContext);
   const [constraints, setConstraints] = useState<MinMaxState | undefined>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const { referralAddress } = useContext(ReferralAddressContext);
 
   useEffect(() => {
     if (!api) {
@@ -42,9 +44,7 @@ export function Deposit() {
 
       try {
         setIsLoading(true);
-
-        // TODO: FIX UPLINE
-        await api.methods.deposit(toNano(amount), null);
+        await api.methods.deposit(toNano(amount), referralAddress);
         toast({
           title: t("dash.deposit.toastSucceed.title"),
           description: t("dash.deposit.toastSucceed.description"),
@@ -65,7 +65,7 @@ export function Deposit() {
         setIsLoading(false);
       }
     },
-    [api, navigate, t, toast],
+    [api, navigate, t, toast, referralAddress],
   );
 
   if (!constraints) {

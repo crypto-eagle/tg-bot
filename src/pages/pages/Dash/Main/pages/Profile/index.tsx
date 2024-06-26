@@ -23,7 +23,7 @@ export function ProfileStatus() {
   return (
     <>
       <UserInfoSecondary timePast={profile.current?.timePast} userStatus={userStatus} peopleInProject={546}/>
-      <Consultation userName={uplineAddress} referralLink={`${botLink}${profile.refAddress.toString()}`}/>
+      <Consultation userName={uplineAddress} referralLink={`${botLink}?start=${profile.refAddress.toString()}`}/>
     </>
   );
 }
