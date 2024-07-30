@@ -6,6 +6,8 @@ import { useApi } from "../../pages/hooks/useApi";
 export interface ISmartContractData {
   api?: IApiResult;
   profile?: IProfile | null;
+
+  error?: string | null;
 }
 
 export const SmartContractContext = createContext<ISmartContractData>(

@@ -2,12 +2,12 @@ import React, {ReactElement, useMemo} from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { useColors } from "@hooks/useColors";
 import { useTranslation } from "react-i18next";
-import { PlanktonIcon } from "../icons/PlanktonIcon";
-import { ShrimpIcon } from "../icons/ShrimpIcon";
-import { CrucianIcon } from "../icons/CrucianIcon";
-import { PikeIcon } from "../icons/PikeIcon";
-import { CatfishIcon } from "../icons/CatfishIcon";
-import { WhaleIcon } from "../icons/WhaleIcon";
+import { PlanktonIcon } from "../../../../../../../shared/icons/PlanktonIcon";
+import { ShrimpIcon } from "../../../../../../../shared/icons/ShrimpIcon";
+import { CrucianIcon } from "../../../../../../../shared/icons/CrucianIcon";
+import { PikeIcon } from "../../../../../../../shared/icons/PikeIcon";
+import { CatfishIcon } from "../../../../../../../shared/icons/CatfishIcon";
+import { WhaleIcon } from "../../../../../../../shared/icons/WhaleIcon";
 
 export type UserStatusType = "plankton" | "shrimp" | "crucian" | "pike" | "catfish" | "whale";
 
@@ -54,7 +54,7 @@ export function UserStatusBadge(props: UserStatusBadgeProps) {
       >
         <Flex alignItems="center" gap="5px" w="fit-content">
           {elementsSetting?.icon}
-          <Text>
+          <Text className="status-badge">
             {t(`profile.status.${elementsSetting?.userStatus}`)}
           </Text>
         </Flex>

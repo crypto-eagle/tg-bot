@@ -18,7 +18,7 @@ export default function Welcome() {
       justifyContent="space-between"
       spacing="15dvh"
     >
-      <Box w="full">
+      <Box w="full" pt="50px">
         <WelcomeSwiper setSwiper={setSwiper} />
       </Box>
       <Box>

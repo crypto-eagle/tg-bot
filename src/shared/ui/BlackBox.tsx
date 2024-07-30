@@ -14,7 +14,8 @@ export function BlackBox({ children }: Props) {
     <Box
       w="100%"
       fontWeight="bold"
-      padding="16px 24px"
+      px="6"
+      py="4"
       borderRadius="3xl"
       bg={colors.lightblack}
     >

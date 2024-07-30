@@ -1,37 +1,37 @@
-import { Stat, StatLabel, Text, StatNumber, Box } from "@chakra-ui/react";
+import { Stat, StatLabel, Text, StatNumber, Flex } from "@chakra-ui/react";
 import React from "react";
 import { useColors } from "@hooks/useColors";
 import { useTranslation } from "react-i18next";
+import * as CSS from "csstype";
 
 interface StatViewProps {
   title: string;
   rowView?: true;
+  isSpaceBetween?: true;
   children: React.ReactNode;
+  headerStyle?: {
+    fontSize: CSS.Property.FontSize
+  }
 }
 
 export function StatView(props: StatViewProps) {
   const { t } = useTranslation();
   const colors = useColors();
 
-  // eslint-disable-next-line no-unused-vars
-  const { children, title, rowView } = props;
+  const { children, title, rowView, isSpaceBetween, headerStyle } = props;
 
   return (
     <Stat>
-      <Box
-        {...(rowView
-          ? {
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }
-          : {})}
+      <Flex
+          flexDirection={rowView ? "row" : "column"}
+          align={rowView ? "center" : "flex-start"}
+          justifyContent={rowView && isSpaceBetween ? "space-between" : ""}
       >
-        <StatLabel>
-          <Text color={colors.green}>{t(title)}</Text>
+        <StatLabel mr={rowView ? 2 : 0}>
+          <Text {...(headerStyle || {fontSize: "16px"})} fontWeight="600" color={colors.green}>{t(title)}:</Text>
         </StatLabel>
         <StatNumber>{children}</StatNumber>
-      </Box>
+      </Flex>
     </Stat>
   );
 }

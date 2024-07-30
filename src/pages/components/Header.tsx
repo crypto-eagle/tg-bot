@@ -1,6 +1,5 @@
 import { Avatar, HStack, StackProps } from "@chakra-ui/react";
 import { TonConnectButton } from "@tonconnect/ui-react";
-import { ColorModeToggler } from "@core/components/ColorModeToggler";
 import React from "react";
 import logo from "../../assets/react.svg";
 
@@ -11,7 +10,7 @@ export function Header(props: StackProps) {
 
       <HStack>
         <TonConnectButton />
-        <ColorModeToggler />
+        {/* <ColorModeToggler /> */}
       </HStack>
     </HStack>
   );

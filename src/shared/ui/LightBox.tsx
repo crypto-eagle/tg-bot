@@ -12,10 +12,11 @@ export function LightBox({ children }: Props) {
 
   return (
     <Box
-      p="6"
+      px="6"
+      py="4"
       w="100%"
       fontWeight="bold"
-      borderRadius="20px"
+      borderRadius="3xl"
       bg="whiteAlpha.400"
       border={`3px solid ${colors.turquoise}`}
     >

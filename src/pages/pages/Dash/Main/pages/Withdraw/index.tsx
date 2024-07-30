@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import React, { useCallback, useContext, useState } from "react";
 import { SmartContractContext } from "@core/providers/smart-contract.provider";
-import { Button, Flex, Heading, Text, useToast } from "@chakra-ui/react";
+import { Button, Flex, Text, useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { Loader } from "@core/components/Loader";
 import { useColors } from "@hooks/useColors";
@@ -56,18 +56,19 @@ export function Withdraw() {
     <Loader rows={3} />
   ) : (
     <BlackBox>
-      <Heading color={colors.green} as="h4" size="md">
+      <Text className="block-title" mb={6} color={colors.green}>
         {t("dash.withdraw.title")}
-      </Heading>
-      <Text color={colors.gray}>{t("dash.withdraw.subTitle")}:</Text>
+      </Text>
 
       <TonValue
         title="dash.withdraw.claimableAmount"
         rowView
+        isSpaceBetween
         value={
             (profile.current?.earnedAmount ?? 0) - (profile.current?.claimedAmount ?? 0)
         }
       />
+      <Text className="status-badge" color={colors.white}>{t("dash.withdraw.subTitle")}</Text>
 
       <Flex justifyContent="space-evenly" mt={4}>
         <Button

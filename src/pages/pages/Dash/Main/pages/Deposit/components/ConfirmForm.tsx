@@ -38,7 +38,7 @@ export function ConfirmForm(props: ConfirmFormProps) {
       >
         {() => (
           <Form>
-            <Text color={colors.green}>{t(title)}:</Text>
+            <Text className="block-title" color={colors.green}>{t(title)}:</Text>
 
             <Box mt={7} mb={7}>
               <Field name="amount">
@@ -48,7 +48,7 @@ export function ConfirmForm(props: ConfirmFormProps) {
                     <Input
                       {...field}
                       h={12}
-                      border={2}
+                      border={3}
                       borderRadius="3xl"
                       borderStyle="solid"
                       borderColor={colors.turquoise}

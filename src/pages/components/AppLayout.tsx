@@ -8,19 +8,19 @@ export function AppLayout(props: { children: React.ReactNode }) {
 
   return (
     <>
-      <Stack bg={colors.black} color={colors.white} w="100vw" minH="100vh"  p="8">
+      <Stack bg={colors.black} color={colors.white} w="100vw" minH="100vh"  py={8} px={4}>
         <Box
           bg={colors.cyan}
-          w="60%"
-          h="35%"
+          w="65%"
+          h="50%"
           rounded="full"
           filter="blur(100px)"
           pos="absolute"
         />
         <Box
           bg={colors.pink}
-          w="60%"
-          h="35%"
+          w="65%"
+          h="50%"
           rounded="full"
           filter="blur(100px)"
           pos="absolute"

@@ -1,4 +1,4 @@
-import React, {useMemo} from "react";
+import React, {useMemo, useState} from "react";
 import {
   Box,
   Button,
@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { useColors } from "@hooks/useColors";
 import { useTranslation } from "react-i18next";
-import { BlackBox } from "../../../../../../shared/ui/BlackBox";
+import { BlackBox } from "../../../../../../../shared/ui/BlackBox";
 
 const tableData = [
   {
@@ -124,8 +124,14 @@ export function StructureTable() {
   const colors = useColors();
   const data = useMemo(() => tableData, []);
   const isTableResponsive = useBreakpointValue({ base: true, md: false });
+  const [showAll, setShowAll] = useState(false);
 
-    return (
+  const handleToggleShow = () => {
+    setShowAll(!showAll);
+  };
+  const visibleRows = showAll ? data.length : 6;
+
+  return (
     <BlackBox>
       <TableContainer>
         <Table size={isTableResponsive ? "sm" : "md"} variant="unstyled">
@@ -138,7 +144,7 @@ export function StructureTable() {
             </Tr>
           </Thead>
           <Tbody>
-            {data.map((el) => (
+            {data.slice(0, visibleRows).map((el) => (
               <Tr key={el.number}>
                 <TableCell>{el.number} {t("profile.table.generation")}</TableCell>
                 { /* <TableCell>{el.turnover_structure}</TableCell> */ }
@@ -155,8 +161,9 @@ export function StructureTable() {
            w="40%"
            bg={colors.blue}
            borderRadius="3xl"
+           onClick={handleToggleShow}
         >
-          {t("profile.table.more")}
+           {showAll ? t("profile.table.less") : t("profile.table.more")}
         </Button>
       </Flex>
     </BlackBox>

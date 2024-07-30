@@ -2,15 +2,25 @@ import {
   ColorMode,
   ColorModeContextType,
   extendTheme,
-  ThemeConfig,
+  ThemeConfig
 } from "@chakra-ui/react";
 
 const config: ThemeConfig = {
   initialColorMode: "dark",
-  useSystemColorMode: false,
+  useSystemColorMode: false
 };
+
 export const chakraCustomTheme = extendTheme({
   config,
+  components: {
+    Progress: {
+      baseStyle: {
+        filledTrack: {
+          bg: '#16F0C9'
+        }
+      }
+    }
+  }
 });
 
 const chakraColorModeStoreKey = "chakra-ui-color-mode";

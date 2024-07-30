@@ -39,7 +39,8 @@
       "title": "Total status",
       "totalDeposit": "Deposit",
       "totalWithdraw": "Withdraw",
-      "totalReferralBonus": "Referral bonus"
+      "totalReferralBonus": "Referral bonus",
+      "availableForWithdraw": "Available for withdraw"
     },
     "deposit": {
       "title": "Indicate the replenishment amount",
@@ -82,8 +83,9 @@
   },
   "profile": {
     "title": "Total status",
+    "user-statistics": "Your statistics",
     "youInProject": "You are in the project",
-    "peopleInProject": "People in the project",
+    "peopleInProject": "Number of referrals",
     "time": {
       "day": "day",
       "hours": "hours",
@@ -107,6 +109,7 @@
     },
     "userInfo": {
       "peopleOnProject": "People on the project",
+      "partnerNumbers": "Number of partners",
       "depositStatus": {
         "title": "Deposit status",
         "notActivated": "Not activated",
@@ -121,6 +124,7 @@
       "numberOfPartners": "Number of partners",
       "interestRate": "Interest rate",
       "more": "More",
+      "less": "Less",
       "generation": "generation"
     }
   },
@@ -128,5 +132,9 @@
     "min": "Min amount is {{min}} TON",
     "max": "Max amount is {{max}} TON",
     "required": "Required field"
+  },
+  "errors": {
+    "incorrectTonNet": "Incorrect network",
+    "incorrectTonNetMsg": "You're using an address form for the wrong TON net. Please verify your network settings and use the correct address form for your environment."
   }
 }

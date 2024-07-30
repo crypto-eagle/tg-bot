@@ -1,4 +1,4 @@
-import {UserStatusType} from "../components/UserStatusBadge";
+import {UserStatusType} from "../controls/UserStatusBadge";
 
 const depositStatusRules: { amount: number, status: UserStatusType }[] = [
     { amount: 3000, status: "whale" },

@@ -24,6 +24,7 @@ export interface IProfile {
   canDeposit: boolean;
   refAddress: Address;
   upLine: Address;
+  refCount: number;
   total: ProfileTotals;
   current: ProfileCurrentRound | null;
 }

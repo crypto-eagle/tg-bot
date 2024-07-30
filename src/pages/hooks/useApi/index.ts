@@ -19,6 +19,7 @@ export function useApi(): ISmartContractData {
 
   const [state, setState] = useState<IApiResult>();
   const [profile, setProfile] = useState<IProfile | null>();
+  const [error, setError] = useState<string | null>();
 
   useEffect(() => {
     if (!contract || !wallet) {
@@ -41,7 +42,14 @@ export function useApi(): ISmartContractData {
     });
 
     async function fetchProfile() {
-      setProfile(await getProfile(contract!, address));
+      try {
+        setProfile(await getProfile(contract!, address));
+      } catch (err) {
+        if (err instanceof Error) {
+          setProfile(null);
+          setError(err.message);
+        }
+      }
     }
 
     fetchProfile().then();
@@ -55,5 +63,5 @@ export function useApi(): ISmartContractData {
     return () => clearInterval(interval);
   }, [contract, wallet, sender]);
 
-  return { api: state, profile };
+  return { api: state, profile, error };
 }

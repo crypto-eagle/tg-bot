@@ -26,22 +26,33 @@ export function Stats() {
   return (
     <>
       <BlackBox>
-        <Text mb={4}>{t("dash.status.title")}</Text>
+        <Text className="block-title" mb={4}>{t("dash.status.title")}</Text>
 
         <TonValue
           rowView
+          isSpaceBetween
+          title="dash.status.availableForWithdraw"
+          value={
+              (profile?.current?.earnedAmount ?? 0) - (profile?.current?.claimedAmount ?? 0)
+          }
+        />
+        <TonValue
+          rowView
+          isSpaceBetween
           title="dash.status.totalDeposit"
           value={profile?.total.deposit || null}
         />
 
         <TonValue
           rowView
+          isSpaceBetween
           title="dash.status.totalWithdraw"
           value={profile?.total.claimed || null}
         />
 
         <TonValue
           rowView
+          isSpaceBetween
           title="dash.status.totalReferralBonus"
           value={profile?.total.referalBonus || null}
         />

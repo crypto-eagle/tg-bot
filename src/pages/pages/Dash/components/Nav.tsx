@@ -1,14 +1,13 @@
 import { Flex, IconButton, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 import {
   CheckCircleIcon,
-  InfoIcon,
   SettingsIcon,
   StarIcon,
 } from "@chakra-ui/icons";
 import React, { ReactElement, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
-import { BlackBox } from "../../../../../shared/ui/BlackBox";
+import { BlackBox } from "../../../../shared/ui/BlackBox";
 
 function NavItem(props: {
   label: string;
@@ -53,15 +52,6 @@ const navItems = {
       icon={<StarIcon />}
     />
   ),
-  info: (
-    <NavItem
-      label="Info"
-      text="dash.nav.info"
-      key="2"
-      link="/profile"
-      icon={<InfoIcon />}
-    />
-  ),
   profile: (
     <NavItem
       label="Profile"
@@ -76,18 +66,18 @@ const navItems = {
       label="Referral"
       text="dash.nav.referral"
       key="4"
-      link="/referral"
+      link="/profile/referral"
       icon={<CheckCircleIcon />}
     />
   ),
 };
 
 const pathNavs = new Map([
-  ["/", [navItems.info, navItems.profile, navItems.referral]],
-  ["/deposit", [navItems.info, navItems.profile, navItems.referral]],
-  ["/withdraw", [navItems.info, navItems.profile, navItems.referral]],
+  ["/", [navItems.dash, navItems.profile, navItems.referral]],
+  ["/deposit", [navItems.dash, navItems.profile, navItems.referral]],
+  ["/withdraw", [navItems.dash, navItems.profile, navItems.referral]],
   ["/profile", [navItems.dash, navItems.profile, navItems.referral]],
-  ["/referral", [navItems.dash, navItems.info, navItems.profile]],
+  ["/profile/referral", [navItems.dash, navItems.profile, navItems.referral]],
 ]);
 
 export function Nav() {

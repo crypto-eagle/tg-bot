@@ -35,14 +35,6 @@ export default createBrowserRouter([
             Component: dash.Withdraw,
           },
           {
-            path: "/profile",
-            Component: dash.ProfileStatus,
-          },
-          {
-            path: "/referral",
-            Component: dash.Referral,
-          },
-          {
             path: "/test",
             Component: TestPage,
             children: [
@@ -52,6 +44,20 @@ export default createBrowserRouter([
               },
             ],
           },
+        ],
+      },
+      {
+        path: "profile",
+        Component: dash.ProfileLayout,
+        children: [
+          {
+            path: "",
+            Component: dash.Profile,
+          },
+          {
+            path: "referral",
+            Component: dash.Referral,
+          }
         ],
       },
     ],

@@ -39,7 +39,8 @@
       "title": "Суммарная статистика",
       "totalDeposit": "Депозит",
       "totalWithdraw": "Выводы",
-      "totalReferralBonus": "Реферальный бонус"
+      "totalReferralBonus": "Реферальный бонус",
+      "availableForWithdraw": "Доступно для вывода"
     },
     "deposit": {
       "title": "Укажите сумму пополнения",
@@ -82,8 +83,9 @@
   },
   "profile": {
     "title": "Суммарная статистика",
+    "user-statistics": "Ваша статистика",
     "youInProject": "Вы в проекте",
-    "peopleInProject": "Людей в проекте",
+    "peopleInProject": "Количество рефералов",
     "time": {
       "day": "дней",
       "hours": "часов",
@@ -107,6 +109,7 @@
     },
     "userInfo": {
       "peopleOnProject": "Люди в проекте",
+      "partnerNumbers": "Количесво партнеров",
       "depositStatus": {
         "title": "Статус депозита",
         "notActivated": "Не активирован",
@@ -121,6 +124,7 @@
       "numberOfPartners": "Количество партнеров",
       "interestRate": "Процентная ставка",
       "more": "Больше",
+      "less": "Меньше",
       "generation": "поколение"
     }
   },
@@ -128,5 +132,9 @@
     "min": "Минимальное значение {{min}} TON",
     "max": "Максимальное значение {{max}} TON",
     "required": "Обязательное поле"
+  },
+  "errors": {
+    "incorrectTonNet": "Неправильная сеть",
+    "incorrectTonNetMsg": "Вы используете форму адреса для неправильной сети TON. Проверьте настройки сети и используйте правильную форму адреса для вашей среды."
   }
 }

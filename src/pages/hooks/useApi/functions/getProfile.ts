@@ -21,27 +21,28 @@ export async function getProfile(
   contract: OpenedContract<EarnContract>,
   wallet: Address,
 ): Promise<IProfile | null> {
-  const profile = await contract.getInvestorProfile(wallet);
+    const profile = await contract.getInvestorProfile(wallet);
 
-  return profile
-    ? {
-        canDeposit: profile.canDeposit,
-        refAddress: profile.refAddress,
-        upLine: profile.upLine,
-        total: {
-          deposit: asNum(profile.total.deposit),
-          claimed: asNum(profile.total.claimed),
-          referalBonus: asNum(profile.total.referalBonus),
-        },
-        current: profile.current
-          ? {
-              deposit: asNum(profile.current.deposit),
-              claimedAmount: asNum(profile.current.claimedAmount),
-              earnedAmount: asNum(profile.current.earnedAmount),
-              earnedPercent: Number(profile.current.earnedPercent),
-              timePast: secondsToDhms(profile.current.secondsPast),
-            }
-          : null,
-      }
-    : null;
+    return profile
+        ? {
+            canDeposit: profile.canDeposit,
+            refAddress: profile.refAddress,
+            upLine: profile.upLine,
+            refCount: Number(profile.refCount),
+            total: {
+                deposit: asNum(profile.total.deposit),
+                claimed: asNum(profile.total.claimed),
+                referalBonus: asNum(profile.total.referalBonus),
+            },
+            current: profile.current
+                ? {
+                    deposit: asNum(profile.current.deposit),
+                    claimedAmount: asNum(profile.current.claimedAmount),
+                    earnedAmount: asNum(profile.current.earnedAmount),
+                    earnedPercent: Number(profile.current.earnedPercent),
+                    timePast: secondsToDhms(profile.current.secondsPast),
+                }
+                : null,
+        }
+        : null;
 }

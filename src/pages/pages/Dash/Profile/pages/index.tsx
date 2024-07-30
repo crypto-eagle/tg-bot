@@ -1,11 +1,2 @@
-import React from "react";
-
-export function Profile() {
-  return (
-    <>
-      {/* <Statistics /> */}
-      {/* <Consultation /> */}
-      {/* <Table /> */}
-    </>
-  );
-}
+export * from "./Profile";
+export * from "./Referral";
